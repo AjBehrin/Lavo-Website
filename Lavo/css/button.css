@@ -1,0 +1,74 @@
+#fixedsocial {
+    top:30%;
+    height:200px;
+    width:60px;
+    position:fixed;
+    right: 0;
+
+
+
+}
+
+.phoneicon {
+    background:url("http://placehold.it/50x50");
+    height:50px;
+    width:50px;
+   transition:ease 500ms;
+    background-size:50px;
+    opacity:1;
+
+
+}
+
+.phoneicon:hover {
+    background:url("http://placehold.it/50x50");
+    height:50px;
+    width:50px;
+    background-size:60px;
+    opacity:0.5;
+    transition:ease 500ms;
+    margin-left:-140px;
+    width:70px;
+
+
+}
+
+.washicon {
+    background:url("http://placehold.it/50x50");
+    height:50px;
+    width:50px;
+    transition:ease 500ms;
+    background-size:50px;
+    opacity:1;
+}
+
+.washicon:hover {
+    background:url("http://placehold.it/50x50");
+    height:50px;
+    width:50px;
+    background-size:60px;
+    opacity:0.5;
+    transition:ease 500ms;
+    margin-left:-140px;
+    width:70px;
+}
+
+.vieworder {
+    background:url("http://placehold.it/50x50");
+    height:50px;
+    width:50px;
+    transition:ease 500ms;
+    background-size:50px;
+    opacity:1;
+}
+
+.vieworder:hover {
+    background:url("http://placehold.it/50x50");
+    height:50px;
+    width:50px;
+    background-size:60px;
+    opacity:0.5;
+    transition:ease 500ms;
+    margin-left:-140px;
+    width:70px;
+}
