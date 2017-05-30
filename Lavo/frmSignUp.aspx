@@ -5,51 +5,61 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <div class="row">
-        <h3 class="text-center">Sign Up Form</h3><br />
-        <form class="form-horizontal" action="/action_page.php" runat="server">
+        <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
+        <h3 class="text-center">Enter Login Information Below</h3><br />
+        <form class="form-horizontal" runat="server">
+            <div class="form-group">
+                <label class="control-label col-sm-offset-3 col-sm-2" for="Email">Email:</label>
+                <div class="col-sm-4">
+                    <input type="email" runat="server" class="form-control" id="txtEmail" placeholder="Enter Email" name="txtEmail" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-offset-3 col-sm-2" for="Password">Password:</label>
+                <div class="col-sm-4">
+                    <input type="password" runat="server" class="form-control" id="txtPassword" placeholder="Enter Desired Password" name="txtPassword" />
+                </div>
+            </div>
+            <br />
+            <h3 class="text-center">Enter Account Information Below</h3>
+            <br />
             <div class="form-group">
                 <label class="control-label col-sm-offset-3 col-sm-2" for="Name">Full Name:</label>
-                <div class="col-sm-4">
-                    <!--<input type="text" class="form-control" id="Name" placeholder="Enter Full Name" name="Name" />-->
-                    <asp:TextBox ID="name" runat="server" CssClass="form-control"></asp:TextBox>
+                <div class="col-sm-4">              
+                    <input type="text" runat="server" class="form-control" id="txtName" placeholder="Enter Full Name" name="txtName" />                    
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-offset-3 col-sm-2" for="Address">Address:</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="Address" placeholder="Enter Address" name="Address" />
+                    <input type="text" runat="server" class="form-control" id="txtAddress" placeholder="Enter Address" name="txtAddress" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-offset-3 col-sm-2" for="City">City:</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="City" placeholder="Enter City" name="City" />
+                    <input type="text" runat="server" class="form-control" id="txtCity" placeholder="Enter City" name="txtCity" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-offset-3 col-sm-2" for="State">State:</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="State" placeholder="Enter State (Abbreviation Only)" name="State" />
+                    <input type="text" runat="server" class="form-control" id="txtState" placeholder="Enter State (Abbreviation Only)" name="txtState" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-offset-3 col-sm-2" for="Zipcode">Zipcode:</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="Zipcode" placeholder="Enter Zipcode" name="Zipcode" />
+                    <input type="text" runat="server" class="form-control" id="txtZipcode" placeholder="Enter Zipcode" name="txtZipcode" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-offset-3 col-sm-2" for="Phone">Phone:</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="Phone" placeholder="Enter Phone Number" name="Phone" />
+                    <input type="text" runat="server" class="form-control" id="txtPhone" placeholder="Enter Phone Number" name="txtPhone" />
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-offset-3 col-sm-2" for="Email">Email:</label>
-                <div class="col-sm-4">
-                    <input type="email" class="form-control" id="Email" placeholder="Enter Email" name="Email" />
-                </div>
-            </div>
+            <button runat="server" type="submit" class="btn btn-primary col-sm-offset-4" onserverclick="btnAddUser_ServerClick" id="btnAddUser">Submit</button>
         </form>
     </div>
 

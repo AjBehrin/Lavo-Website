@@ -4,13 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <form runat="server">
+    <form class="form-horizontal" runat="server">
 
         <asp:Label ID="Label1" runat="server" Text="Number1:"></asp:Label>
         <asp:TextBox ID="txtNum1" runat="server" CssClass="form-control input-lg"
-            Width="250px" TabIndex="1"></asp:TextBox>
-
-        <asp:TextBox ID="txtExample" runat="server"></asp:TextBox>
+            Width="250px" TabIndex="1"></asp:TextBox>       
 
         <asp:Label ID="Label2" runat="server" Text="Number2:"></asp:Label>
         <asp:TextBox ID="txtNum2" runat="server" CssClass="form-control input-lg"

@@ -15,9 +15,12 @@ public partial class frmFormTests : System.Web.UI.Page
 
     protected void btnMulti_ServerClick(object sender, EventArgs e)
     {
-        int num1, num2, numAnswer;
+        int num1 = 0, num2 = 0, numAnswer = 0;
 
-        if(int.TryParse(txtNum1.Value, out num1))
+        string number1 = txtNum1.Value;
+        string number2 = txtNum2.Value;
+
+        if(int.TryParse(number1, out num1))
         {
 
         }
@@ -25,7 +28,7 @@ public partial class frmFormTests : System.Web.UI.Page
         {
             txtNum1.Value = "Failure";
         }
-        if(int.TryParse(txtNum2.Value, out num2))
+        if(int.TryParse(number2, out num2))
         {
 
         }
@@ -37,6 +40,6 @@ public partial class frmFormTests : System.Web.UI.Page
         numAnswer = num1 * num2;
 
         txtNumAnswer.Value = numAnswer.ToString();
-        txtAnswer2.Text = numAnswer.ToString();
+        lblAnswer.Text = numAnswer.ToString();
     }
 }

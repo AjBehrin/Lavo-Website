@@ -14,7 +14,7 @@ public partial class frmAnotherFormTest : System.Web.UI.Page
 
     protected void btnCalc_Click(object sender, EventArgs e)
     {
-        int num1, num2, numAnswer;
+        int num1 = 0, num2 = 0, numAnswer = 0;
 
         if (int.TryParse(txtNum1.Text, out num1))
         {

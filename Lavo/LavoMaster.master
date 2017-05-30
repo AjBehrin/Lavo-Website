@@ -5,6 +5,8 @@
 <html>
 <head runat="server">
     <title>Lavo Car Washing Service</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/bootstrap.css" rel="stylesheet" />
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -43,6 +45,10 @@
     </div>
     </div>
     </nav>
+
+    <strong><span style="color:red;">
+        <asp:Label ID="lblUserFeedBack" runat="server">Welcome!</asp:Label>
+    </span></strong>
 
     <div class="container">
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">

@@ -57,7 +57,7 @@ public class clsDataLayer
         return myDataSet;
     }
 
-    public void InsertCustomer(string name, string address, string city, string state, string zipcode, string phone, string email)
+    public void InsertCustomer(string name, string address, string city, string state, string zipcode, string phone, string email, string password)
     {
         //Set DB connection string
         MySqlConnection con = new MySqlConnection();
@@ -67,8 +67,8 @@ public class clsDataLayer
         con.Open();
 
         //New DB command
-        string sqlStmt = "INSERT INTO customers name, address, city, state, zipcode, phone, email ";
-        sqlStmt += "VALUES @Name, @Address, @City, @State, @Zipcode, @Phone, @Email";
+        string sqlStmt = "INSERT INTO customers (name, address, city, state, zipcode, phone, email, password) ";
+        sqlStmt += "VALUES (@Name, @Address, @City, @State, @Zipcode, @Phone, @Email, @Password)";
         MySqlCommand cmd = new MySqlCommand(sqlStmt, con);
 
         //Inserting new user information
@@ -81,6 +81,7 @@ public class clsDataLayer
         cmd.Parameters.Add(new MySqlParameter("@State", state));
         cmd.Parameters.Add(new MySqlParameter("@Zipcode", zipcode));
         cmd.Parameters.Add(new MySqlParameter("@Phone", phone));
+        cmd.Parameters.Add(new MySqlParameter("@Password", password));
 
         //Execute the query
         cmd.ExecuteNonQuery();

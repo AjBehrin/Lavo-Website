@@ -31,7 +31,7 @@ public partial class frmTableTest : System.Web.UI.Page
             cmd.Connection = con;
             MySqlDataReader dr = cmd.ExecuteReader();
             customersTable.Append("<table class=\"table table-bordered\">");
-            customersTable.Append("<thead><tr><th>CustomerID</th><th>Name</th><th>Address</th><th>City</th><th>State</th><th>Zipcode</th><th>Phone</th><th>Email</th><th>Join Date</th>");
+            customersTable.Append("<thead><tr><th>CustomerID</th><th>Name</th><th>Join Date</th><th>Address</th><th>City</th><th>State</th><th>Zipcode</th><th>Phone</th><th>Email</th><th>Password</th>");
             customersTable.Append("</tr></thead>");
 
             if (dr.HasRows)
@@ -49,6 +49,7 @@ public partial class frmTableTest : System.Web.UI.Page
                     customersTable.Append("<td>" + dr[6] + "</td>");
                     customersTable.Append("<td>" + dr[7] + "</td>");
                     customersTable.Append("<td>" + dr[8] + "</td>");
+                    customersTable.Append("<td>" + dr[9] + "</td>");
                     customersTable.Append("</tr></tbody>");
                 }
             }

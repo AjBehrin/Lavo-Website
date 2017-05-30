@@ -11,4 +11,31 @@ public partial class frmSignUp : System.Web.UI.Page
     {
 
     }
+
+    protected void btnAddUser_ServerClick(object sender, EventArgs e)
+    {
+        //boolean for success or fail
+        bool addUserError = false;
+
+        //Database path
+        clsDataLayer myDataLayer = new clsDataLayer();
+
+        //Try and catch block for adding new user
+        try
+        {
+            //Call add user method
+            myDataLayer.InsertCustomer(txtName.Value, txtAddress.Value, txtCity.Value, txtState.Value, txtZipcode.Value, txtPhone.Value, txtEmail.Value, txtPassword.Value);
+        }
+        catch (Exception error)
+        {
+            addUserError = true;
+            string message = "Error adding new user to the database, check form data. ";
+            lblError.Text = message + error.Message;
+        }
+
+        if(!addUserError)
+        {
+            lblError.Text = "User Added Successfully";
+        }
+    }
 }

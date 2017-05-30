@@ -11,4 +11,10 @@ public partial class frmCustomerLogin : System.Web.UI.Page
     {
 
     }
+
+    protected void btnLogin_ServerClick(object sender, EventArgs e)
+    {
+        string thing = "Things n Stuff";
+        txtEmail.Value = thing;
+    }
 }
