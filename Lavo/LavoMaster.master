@@ -5,11 +5,15 @@
 <html>
 <head runat="server">
     <title>Lavo Car Washing Service</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/bootstrap.css" rel="stylesheet" />
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
+
 <body>
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
         <div class="navbar-header">
@@ -35,18 +39,33 @@
         <li><a href="#">Employee</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="frmCustomerLogin.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="frmSignUp.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="frmCustomerLogin.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
-  </div>
-</nav>
-  
+    </div>
+    </nav>
+
+    <strong><span style="color:red;">
+        <asp:Label ID="lblUserFeedBack" runat="server">Welcome!</asp:Label>
+    </span></strong>
+
     <div class="container">
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>
+
+    <asp:ContentPlaceHolder ID="footer" runat="server">
+        
+    <div class="footer">
+        <div class="container">
+            <h2> Footer will go here </h2>
+        </div>
+    </div>
+
+    </asp:ContentPlaceHolder>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
