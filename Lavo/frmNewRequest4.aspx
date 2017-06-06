@@ -10,7 +10,7 @@
          
                 <h2>Please Enter Your Address</h2>
          
-                <!-- full-name input-->
+                <!-- full-name input
                 <div class="control-group">
                     <label class="control-label">Full Name</label>
                     <div class="controls">
@@ -18,7 +18,7 @@
                         class="input-xlarge">
                         <p class="help-block"></p>
                     </div>
-                </div>
+                </div> ------>
                 <!-- address-line1 input-->
                 <div class="control-group">
                     <label class="control-label">Address Line 1</label>

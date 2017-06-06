@@ -13,7 +13,7 @@
 
  <div class="row">
     <div class="container text-center">
-      <p>Contact us and we'll get back to you within the hour</p>
+      <h1>Contact us and we'll get back to you within the hour</h1>
       <p><span class="glyphicon glyphicon-map-marker"></span> Someplace, New York</p>
       <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
       <p><span class="glyphicon glyphicon-envelope"></span> LavoCarWash@something.com</p>
@@ -30,7 +30,7 @@
                    
                       
                      <div class="container text-center">
-                      <h2>Or simply send us an IM below!</h2>
+                      <h1>Or simply send us an IM below!</h1>
                        
                             <hr>
                            

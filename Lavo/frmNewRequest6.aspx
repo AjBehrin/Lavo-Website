@@ -8,11 +8,13 @@
        <br />
        <br />
 
-      <ul>(Display the Following:)</ul>
-      <ul>Show Date & Time</ul>
-      <ul>Size Selected</ul>
-      <ul>Address Entered</ul>
-      <ul>Payment Entered</ul>
+     <p>(Display the Following:)</p>
+      <p>(Show Date & Time)</p>
+       <p>(Size Selected)</p>
+       <p>(Address Entered)</p>
+       <p>(Payment Entered)</p>
+      
+    
 
 <h2>Looks Good!</h2>
       <p>Ok icon: <span class="glyphicon glyphicon-ok"></span></p>    
@@ -24,7 +26,7 @@
 <h2>Go Back</h2>
       <p>Ok icon: <span class="glyphicon glyphicon-remove"></span></p>    
       <p>Ok icon as a link:
-        <a href="frmNewRequest5">
+        <a href="frmNewRequest5.aspx">
           <span class="glyphicon glyphicon-remove"></span>
         </a>
 

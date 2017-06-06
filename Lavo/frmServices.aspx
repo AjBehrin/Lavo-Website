@@ -30,13 +30,14 @@
    text-align: center;
 }
 </style>   
-        <a  href="#1a" data-toggle="tab">Sedan & Compact</a>
+        <a  href="#1a" data-toggle="tab">Small Sized<br /><img src ="images\3.png" style="width:150px;height:100px;"></a>
 			</li>
-			<li><a href="#2a" data-toggle="tab">SUV & Pickup</a>
+
+			<li><a href="#2a" data-toggle="tab">Medium Sized<br /><img src ="images\2.png" style="width:150px;height:100px;"></a>
 			</li>
-			<li><a href="#3a" data-toggle="tab">Van & Truck</a>
+			<li><a href="#3a" data-toggle="tab">Large Sized<br /><img src ="images\4.png" style="width:150px;height:100px;"></a>
 			</li>
-    <li><a href="#4a" data-toggle="tab">Limo & Bus</a>
+            <li><a href="#4a" data-toggle="tab">Very Long<br /><img src ="images\1.png" style="width:150px;height:100px;"></a>
 			</li>
 
     </ul>
@@ -46,58 +47,93 @@
 
 			<div class="tab-content clearfix">
 			  <div class="tab-pane active" id="1a">
-          <h3>Insert Sedan & Compact info</h3>
+          <h2>Sedan and smaller vehicles (hatchback, motorcycle, bicycle, ATV, dirtbike, etc.)</h2>
+  <div class="row">
+    <div class="col-sm-6" style="background-color:cyan;">
+      <p>Basic package 25$+tax:
+Exterior wash
+Rims
+</p>
+    </div>
+    <div class="col-sm-6" style="background-color:darkcyan;">
+      <p>Premium package 35$ +tax:
+Exterior wash
+Rims
+Wax
+Interior Cleaning (optional)
 
-				</div>
-				<div class="tab-pane" id="2a">
-          <h3>Insert SUV & Pickup info</h3>
+</p>
+        </div>
+</div>
+</div>				
+		<div class="tab-pane" id="2a">
+         <div class="container-fluid">
+  <h2>Bigger Vehicles ( SUV, pickup truck, jeep)</h2>
+  <div class="row">
+    <div class="col-sm-6" style="background-color:cyan;">
+      <p>Basic package 60$+tax:
+Exterior wash
+Rims
+</p>
+    </div>
+    <div class="col-sm-6" style="background-color:darkcyan;">
+      <p>Premium package 80$+tax;
+Exterior wash
+ Rims
+ Wax
+Interior Cleaning (optional)
+</p>
+    </div>
+  </div>
+</div>
 				</div>
         <div class="tab-pane" id="3a">
-          <h3>Insert Van & Truck info</h3>
+          <div class="container-fluid">
+  <h2>SUV vehicles (Vans, Small bus, tractor)</h2>
+  <div class="row">
+    <div class="col-sm-6" style="background-color:cyan;">
+      <p>Basic package 70$+tax:
+Exterior wash
+Rims
+</p>
+    </div>
+    <div class="col-sm-6" style="background-color:darkcyan;">
+      <p>Premium Package 90$+tax:
+Exterior wash
+Rims
+Wax
+Interior Cleaning (optional)
+</p>
+    </div>
+  </div>
+</div>
 				</div>
                 <div class="tab-pane" id="4a">
-          <h3>Insert Limo & Bus info</h3>
+          <div class="container-fluid">
+  <h2>Full Size Vehicles (limousine, bus, truck, tractor-trailer)</h2>
+  <div class="row">
+    <div class="col-sm-6" style="background-color:cyan;">
+      <p>Basic Package 80$+tax:
+Exterior wash
+Rims
+</p>
+    </div>
+    <div class="col-sm-6" style="background-color:darkcyan;">
+      <p>Premium Package 100$+tax:
+Exterior wash
+ Rims
+ Wax
+Interior Cleaning (optional)</p>
+    </div>
+  </div>
+</div> 
 				</div>
 			</div>
   </div>
 </div>
-    <!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid bg-grey">
-    <div class="container text-center">
-  <h2 class="text-center">Contact Us</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within the hour</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Someplace, New York</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> LavoCarWash@something.com</p>
-         <div class="col-sm-12 form-group">
- <button class="btn btn-default" type="submit">Send</button>
-          <div class="container text-center">
-              </div></div>
-    </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-      <br />
-          <br>
-          <br />
-          <br>
-          <br />
-         
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-<div class="col-sm-12 form-group">
- </div>
+ <br />
+    <br />
+    <br />
+    <br />
+
 </asp:Content>

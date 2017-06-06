@@ -6,7 +6,7 @@
     <div class="container tex">
   <form class="form-horizontal" role="form">
     <fieldset>
-      <legend>Insert Payment Info</legend>
+      <legend>Insert Card Info</legend>
       <div class="form-group">
         <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
         <div class="col-sm-9">

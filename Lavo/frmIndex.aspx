@@ -10,9 +10,11 @@
 
 <div class="container text-center">
 
-<h1>Company Statement, why we are awesome?</h1>
+<h1>Welcome to LAVO car wash service! We  wash your car while you’re busy at work or enjoying your day. Wash your car when you want it, where you want it and how you want it!</h1>
 
-
+    <br />
+    <br />
+    <br />
   <h2>Recently Washed Vehicles</h2>  
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -71,35 +73,27 @@
     <br />
     <br />
 
-    
+<h3>Try our new LAVO app for Android tm , so you can view the status of your order or place a new order from your smartphone or tablet.</h3>
+     <h3>Visit our Services page to see the services that we offer and their pricing and leave a give us your feedback after your order is completed so we can attend to your needs, visit the Feedback page and see also how other customers described their experience with  LAVO.</h3>
+   <br />
+    <br />
+
  
 <!-- Container (Contact Section) -->
 <div id="contact" class="container-fluid bg-grey">
     <div class="container text-center">
-  <h2 class="text-center">Contact Us</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within the hour</p>
+  
       <p><span class="glyphicon glyphicon-map-marker"></span> Someplace, New York</p>
       <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
       <p><span class="glyphicon glyphicon-envelope"></span> LavoCarWash@something.com</p>
          <div class="col-sm-12 form-group">
- <button class="btn btn-default" type="submit">Send</button>
-          <div class="container text-center">
-              </div></div>
-    </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-       <br />
+
+   
+ 
+          <br>
+          <br />
+          <br>
+          <br />
           <br>
           <br />
           <br>
@@ -107,8 +101,7 @@
          
       </div>
     </div>
-  </div>
-</div>
+
     </div>
 </div>
 </asp:Content>
