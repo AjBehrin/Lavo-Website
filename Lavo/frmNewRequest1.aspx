@@ -2,17 +2,38 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <input type="text" name="daterange" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM" />
- 
-<script type="text/javascript">
-$(function() {
-    $('input[name="daterange"]').daterangepicker({
-        timePicker: true,
-        timePickerIncrement: 30,
-        locale: {
-            format: 'MM/DD/YYYY h:mm A'
-        }
-    });
-});
-</script>
+
+  
+ <div class="container text-center">
+  <div class="row">
+   
+<style>.control-label {
+            font-family: Calibri;
+            margin-bottom: 0;  
+            border: 0;
+            font-size: 20px !important;
+            letter-spacing: 4px;
+            opacity: 0.9;
+        }</style>
+    <!-- Form code begins -->
+    <form method="post">
+      <div class="form-group"> <!-- Date input -->
+
+        <label class="control-label" for="date">Please Enter Wash Date</label>
+        
+        <br />
+        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+      </div>
+       
+      <div class="form-group"> <!-- Submit button -->
+        <div class="text-center"><button type="submit" class="btn btn-warning" id="btnNext">Submit <span class="glyphicon glyphicon-send"></span></button>
+             </div>
+          </div>
+     </form>
+     <!-- Form code ends --> 
+
+    </div>
+     
+ </div>
+
 </asp:Content>

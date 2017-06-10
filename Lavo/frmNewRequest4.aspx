@@ -2,6 +2,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <style>h2 {
+            font-family: Calibri;
+            margin-bottom: 0;  
+            border: 0;
+            font-size: 20px !important;
+            letter-spacing: 4px;
+            opacity: 0.9;
+        }</style>
+     <style>label {
+            font-family: Calibri;
+            margin-bottom: 0;  
+            border: 0;
+            font-size: 15px !important;
+            letter-spacing: 4px;
+            opacity: 0.9;
+        }</style>
     <div class="container text-center">
 	<div class="row">
 		 <form class="form-horizontal">
@@ -9,6 +25,7 @@
                 <!-- Address form -->
          
                 <h2>Please Enter Your Address</h2>
+                <br />
          
                 <!-- full-name input
                 <div class="control-group">
@@ -23,29 +40,29 @@
                 <div class="control-group">
                     <label class="control-label">Address Line 1</label>
                     <div class="controls">
-                        <input id="address-line1" name="address-line1" type="text" placeholder="address line 1"
+                        <input id="txtReqAddress1" name="address-line1" type="text" placeholder="Street Address"
                         class="input-xlarge">
-                        <p class="help-block">Street address, P.O. box, company name, c/o</p>
+                        
                     </div>
                 </div>
                 <!-- address-line2 input-->
                 <div class="control-group">
                     <label class="control-label">Address Line 2</label>
                     <div class="controls">
-                        <input id="address-line2" name="address-line2" type="text" placeholder="address line 2"
+                        <input id="txtReqAddress2" name="address-line2" type="text" placeholder="Apartment, Suite , etc."
                         class="input-xlarge">
-                        <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                        
                     </div>
                 </div>
                 <!-- city input-->
                 <div class="control-group">
-                    <label class="control-label">City / Town</label>
+                    <label class="control-label">City/Town</label>
                     <div class="controls">
-                        <input id="city" name="city" type="text" placeholder="city" class="input-xlarge">
+                        <input id="txtCity" name="city" type="text" placeholder="City" class="input-xlarge">
                         <p class="help-block"></p>
                     </div>
                 </div>
-                <!-- region input-->
+                <!-- region input--
                 <div class="control-group">
                     <label class="control-label">State / Province / Region</label>
                     <div class="controls">
@@ -53,17 +70,17 @@
                         class="input-xlarge">
                         <p class="help-block"></p>
                     </div>
-                </div>
+                </div> --->
                 <!-- postal-code input-->
                 <div class="control-group">
-                    <label class="control-label">Zip / Postal Code</label>
+                    <label class="control-label">Zip/Postal Code</label>
                     <div class="controls">
-                        <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
+                        <input id="txtZipCode" name="postal-code" type="text" placeholder="Zip"
                         class="input-xlarge">
                         <p class="help-block"></p>
                     </div>
                 </div>
-                <!-- country select -->
+                <!-- country select -
                 <div class="control-group">
                     <label class="control-label">Country</label>
                     <div class="controls">
@@ -310,21 +327,13 @@
                             <option value="ZW">Zimbabwe</option>
                         </select>
                     </div>
-                </div>
+                </div> ---->
             </fieldset>
         </form>
 	</div>
 </div>
-    <div class="form-group"><br>
-          <br />
-          <br>
-          <br />
-          
-
-                                            <div class="col-md-7">
-                                                <button type="submit" class="btn btn-warning pull-right">Send <span class="glyphicon glyphicon-send"></span></button>
-                                            </div>
-                                        </div>
+       <div class="text-center"><button type="submit" class="btn btn-warning" id="btnSubmit">Submit <span class="glyphicon glyphicon-send"></span></button>
+       </div>
     <br>
           <br />
           <br>

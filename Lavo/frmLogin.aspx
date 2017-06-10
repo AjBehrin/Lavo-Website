@@ -18,12 +18,12 @@
                                     
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
+                                        <input id="txtLogInEmail" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
                                     </div>
                                 
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                                        <input id="txtLogInPassword" type="password" class="form-control" name="password" placeholder="password">
                                     </div>
                                     
 
@@ -41,8 +41,8 @@
                                     <!-- Button -->
 
                                     <div class="col-sm-12 controls">
-                                      <a id="btn-login" href="#" class="btn btn-success">Login  </a>
-                                      <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
+                                      <a id="btnLogin" href="#" class="btn btn-success">Login  </a>
+                                      
 
                                     </div>
                                 </div>
@@ -79,51 +79,84 @@
                                     <span></span>
                                 </div>
                                     
-                                
+                                <!--- this is the sign up section---->
                                   
                                 <div class="form-group">
                                     <label for="email" class="col-md-3 control-label">Email</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="email" placeholder="Email Address">
+                                        <input type="text" class="form-control" name="email" placeholder="Email Address" id="txtSignUpEmail">
                                     </div>
                                 </div>
-                                    
-                                <div class="form-group">
-                                    <label for="firstname" class="col-md-3 control-label">First Name</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="firstname" placeholder="First Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastname" class="col-md-3 control-label">Last Name</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
+                                   
+                                 <div class="form-group">
                                     <label for="password" class="col-md-3 control-label">Password</label>
                                     <div class="col-md-9">
                                         <input type="password" class="form-control" name="passwd" placeholder="Password">
                                     </div>
                                 </div>
-                                    
+
+
+                                <div class="form-group">
+                                    <label for="firstname" class="col-md-3 control-label">Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="firstname" placeholder="First & Last" id="txtName">
+                                    </div>
+                                   
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname" class="col-md-3 control-label">Company</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="lastname" placeholder="Company Name" id="txtCompany">
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                    <label for="lastname" class="col-md-3 control-label">Address</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="lastname" placeholder="Mailing Address" id="txtAddress">
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                    <label for="lastname" class="col-md-3 control-label">City</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="lastname" placeholder="City" id="txtCity">
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                    <label for="lastname" class="col-md-3 control-label">State</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="lastname" placeholder="State" id="txtState">
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                    <label for="lastname" class="col-md-3 control-label">Zip Code</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="lastname" placeholder="Zip Code" id="txtZip">
+                                    </div>
+                                </div>
+
+                                  <div class="form-group">
+                                    <label for="lastname" class="col-md-3 control-label">Phone</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="lastname" placeholder="Phone #" id="txtPhone">
+                                    </div>
+                                </div>
                                 
+                                    
+
 
                                 <div class="form-group">
                                     <!-- Button -->                                        
                                     <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
-                                        <span style="margin-left:8px;">or</span>  
+                                        <button id="btnSignup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                                          
                                     </div>
                                 </div>
                                 
-                                <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
-                                    
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
-                                    </div>                                           
-                                        
-                                </div>
+                                
                                 
                                 
                                 
@@ -131,9 +164,13 @@
                          </div>
                     </div>
 
+
                
                
                 
          </div> 
     </div>
+    <br />
+    <br />
+    <br />
 </asp:Content>

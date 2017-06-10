@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div class="container text-center"><h1>Affordable Pricing dependant upon Vehicle Size:</h1>
+<div class="container text-center"><h2>Affordable Pricing dependant upon Vehicle Size</h2>
+    <br />
 <div id="exTab1" class="container">	
 <ul  class="nav nav-pills">
 			<li class="active">
@@ -40,97 +41,141 @@
             <li><a href="#4a" data-toggle="tab">Very Long<br /><img src ="images\1.png" style="width:150px;height:100px;"></a>
 			</li>
 
-    </ul>
-    
-  		
-		
-
+    </ul>		
 			<div class="tab-content clearfix">
 			  <div class="tab-pane active" id="1a">
-          <h2>Sedan and smaller vehicles (hatchback, motorcycle, bicycle, ATV, dirtbike, etc.)</h2>
+          <h2>Sedan & Smaller Vehicles (Hatchback, Motorcycle, Bicycle, ATV, Dirtbike)</h2>
+                  <br />
+                  <br />
   <div class="row">
-    <div class="col-sm-6" style="background-color:cyan;">
-      <p>Basic package 25$+tax:
-Exterior wash
-Rims
-</p>
-    </div>
-    <div class="col-sm-6" style="background-color:darkcyan;">
-      <p>Premium package 35$ +tax:
-Exterior wash
-Rims
-Wax
-Interior Cleaning (optional)
+    <div class="col-sm-6" >
+      <div class = "panel panel-default">
+   <div class = "panel-heading">Basic Package ($25+tax)</div>
+  <ul class="list-group">
+  <li class="list-group-item">Exterior Wash</li>
+  <li class="list-group-item">Rims</li>
+ 
+</ul>
+ </div>
+        </div>
+    <div class="col-sm-6" >
+    
+<div class = "panel panel-default">
+   <div class = "panel-heading">Premium Package ($35+tax)</div>
+    <ul class="list-group">
+  <li class="list-group-item">Exterior Wash</li>
+  <li class="list-group-item">Rims</li>
+  <li class="list-group-item">Wax</li>
+  
+</ul>
+   
+</div>
 
-</p>
         </div>
 </div>
 </div>				
 		<div class="tab-pane" id="2a">
          <div class="container-fluid">
-  <h2>Bigger Vehicles ( SUV, pickup truck, jeep)</h2>
+  <h2>Bigger Vehicles ( SUV, Pickup Truck, Jeep)</h2>
+             <br />
+                  <br />
   <div class="row">
-    <div class="col-sm-6" style="background-color:cyan;">
-      <p>Basic package 60$+tax:
-Exterior wash
-Rims
-</p>
-    </div>
-    <div class="col-sm-6" style="background-color:darkcyan;">
-      <p>Premium package 80$+tax;
-Exterior wash
- Rims
- Wax
-Interior Cleaning (optional)
-</p>
-    </div>
-  </div>
+    <div class="col-sm-6" >
+      <div class = "panel panel-default">
+   <div class = "panel-heading">Basic Package ($35+tax)</div>
+  <ul class="list-group">
+  <li class="list-group-item">Exterior Wash</li>
+  <li class="list-group-item">Rims</li>
+ 
+</ul>
+ </div>
+        </div>
+    <div class="col-sm-6" >
+    
+<div class = "panel panel-default">
+   <div class = "panel-heading">Premium Package ($45+tax)</div>
+    <ul class="list-group">
+  <li class="list-group-item">Exterior Wash</li>
+  <li class="list-group-item">Rims</li>
+  <li class="list-group-item">Wax</li>
+  
+</ul>
+   
+</div>
+
+        </div>
 </div>
 				</div>
+            </div>
         <div class="tab-pane" id="3a">
           <div class="container-fluid">
-  <h2>SUV vehicles (Vans, Small bus, tractor)</h2>
+  <h2>SUV vehicles (Vans, Small Bus, Tractor)</h2>
+              <br />
+                  <br />
   <div class="row">
-    <div class="col-sm-6" style="background-color:cyan;">
-      <p>Basic package 70$+tax:
-Exterior wash
-Rims
-</p>
-    </div>
-    <div class="col-sm-6" style="background-color:darkcyan;">
-      <p>Premium Package 90$+tax:
-Exterior wash
-Rims
-Wax
-Interior Cleaning (optional)
-</p>
-    </div>
-  </div>
+    <div class="col-sm-6" >
+      <div class = "panel panel-default">
+   <div class = "panel-heading">Basic Package ($45+tax)</div>
+  <ul class="list-group">
+  <li class="list-group-item">Exterior Wash</li>
+  <li class="list-group-item">Rims</li>
+ 
+</ul>
+ </div>
+        </div>
+    <div class="col-sm-6" >
+    
+<div class = "panel panel-default">
+   <div class = "panel-heading">Premium Package ($55+tax)</div>
+    <ul class="list-group">
+  <li class="list-group-item">Exterior Wash</li>
+  <li class="list-group-item">Rims</li>
+  <li class="list-group-item">Wax</li>
+  
+</ul>
+   
 </div>
+
+        </div>
+</div>
+              </div>
 				</div>
                 <div class="tab-pane" id="4a">
           <div class="container-fluid">
-  <h2>Full Size Vehicles (limousine, bus, truck, tractor-trailer)</h2>
+  <h2>Full Size Vehicles (Limo, Bus, Truck, Tractor-Trailer)</h2>
+              <br />
+                  <br />
   <div class="row">
-    <div class="col-sm-6" style="background-color:cyan;">
-      <p>Basic Package 80$+tax:
-Exterior wash
-Rims
-</p>
-    </div>
-    <div class="col-sm-6" style="background-color:darkcyan;">
-      <p>Premium Package 100$+tax:
-Exterior wash
- Rims
- Wax
-Interior Cleaning (optional)</p>
-    </div>
-  </div>
-</div> 
-				</div>
+    <div class="col-sm-6" >
+      <div class = "panel panel-default">
+   <div class = "panel-heading">Basic Package ($55+tax)</div>
+  <ul class="list-group">
+  <li class="list-group-item">Exterior Wash</li>
+  <li class="list-group-item">Rims</li>
+ 
+</ul>
+ </div>
+        </div>
+    <div class="col-sm-6" >
+    
+<div class = "panel panel-default">
+   <div class = "panel-heading">Premium Package ($60+tax)</div>
+    <ul class="list-group">
+  <li class="list-group-item">Exterior Wash</li>
+  <li class="list-group-item">Rims</li>
+  <li class="list-group-item">Wax</li>
+  
+</ul>
+   
+</div>
+
+        </div>
+</div>
 			</div>
   </div>
 </div>
+    </div>
+    </div>
  <br />
     <br />
     <br />

@@ -2,22 +2,29 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>label {
+            font-family: Calibri;
+            margin-bottom: 0;  
+            border: 0;
+            font-size: 20px !important;
+            letter-spacing: 4px;
+            opacity: 0.9;
+        }</style>
     <form>
 	<div class="form-group container text-center"> <!-- Message input !-->
-		<label class="control-label " for="region_id"><h1>Choose Your Package</label></h1>
+		<label class="control-label " for="region_id">Choose Your Package</label>
+        <br />
 		<select class="form-control" id="region_id" name="region">
-			<option value="basic">Basic</option>
-			<option value="premium">Premium</option>
-            <option value="premiumOption">Premium with Interior Cleaning</option>
+			<option value="basic" id="dropdownBasic">Basic</option>
+			<option value="premium" id="dropdownPremium">Premium</option>
+            <option value="premiumOption" id="dropdownPremiumWithOption">Premium with Interior Cleaning</option>
 			
 			
 		</select>
 	</div>
 </form>
-
-
       <div class="form-group">
-             <div class="col-md-7"><button type="submit" class="btn btn-warning pull-right">Send <span class="glyphicon glyphicon-send"></span></button>
+             <div class="text-center"><button type="submit" class="btn btn-warning" id="btnNext">Submit <span class="glyphicon glyphicon-send"></span></button>
              </div>
-            </div>
+          </div>
 </asp:Content>

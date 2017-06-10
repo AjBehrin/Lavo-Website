@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style></style>
     <div class="container text-center">
 
 <div class="container">
@@ -101,6 +102,7 @@ Allen Delrosario has attended and graduated from DeVry University. Allen is in c
       <span class="glyphicon glyphicon-user"></span>
     </div>
   </div>
+        </div>
 
 
 
@@ -108,7 +110,8 @@ Allen Delrosario has attended and graduated from DeVry University. Allen is in c
 
 
 <div class="container text-center">
-  <h2>Anytime, Anywhere!</h2>  
+  <h2>Anytime, Anywhere!</h2> 
+    <br />
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -136,55 +139,13 @@ Allen Delrosario has attended and graduated from DeVry University. Allen is in c
   </div>
 </div>
       </div>
+    </div>
      <br>
           <br />
           <br>
           <br />
+    <br />
+    <br />
 
-
-
-
-
-
-
-
-
-
-    <!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid bg-grey">
-    <div class="container text-center">
-  <h2 class="text-center">Contact Us</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within the hour</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Someplace, New York</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> LavoCarWash@something.com</p>
-         <div class="col-sm-12 form-group">
-          <button class="btn btn-default" type="submit">Send</button>
-        </div>
-    </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
- <br />
-          <br>
-          <br />
-          <br>
-          <br />     
-         
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-</div>
+   
 </asp:Content>
