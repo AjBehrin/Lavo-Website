@@ -123,7 +123,90 @@ public class clsDataLayer
         return isValidAccount;
     }
 
-    //Method for new requests - Date / Time?
+    //Methods for processing a new request below
+    //New request adding address
+    public void NewRequestAddress(string address, string city, string zipcode, string custID)
+    {
+        //Open DB connection
+        dbConnection.Open();
+
+        //Building SQL statement
+        string sqlStmt = "INSERT INTO addresses (address, city, zipcode, customerID) ";
+        sqlStmt += "VALUES (@Address, @City, @Zipcode, @CustomerID)";
+
+        //New mySQL command
+        MySqlCommand dbCommand = new MySqlCommand(sqlStmt, dbConnection);
+
+        //Adding parameters
+        MySqlParameter param = new MySqlParameter("@Address", address);
+        dbCommand.Parameters.Add(param);
+
+        dbCommand.Parameters.Add(new MySqlParameter("@City", city));
+        dbCommand.Parameters.Add(new MySqlParameter("@Zipcode", zipcode));
+        dbCommand.Parameters.Add(new MySqlParameter("@CustomerID", custID));
+
+        //Execute the query
+        dbCommand.ExecuteNonQuery();
+
+        //Close DB connection
+        dbConnection.Close();
+    }
+
+    //New request 
+    public void NewRequestKeyAddresses(string pickUpAddress, string pickUpCity, string pickUpZipcode, string dropOffAddress, string dropOffCity, string dropOffZipcode, string custID)
+    {
+            //Open DB connection
+            dbConnection.Open();
+
+            //Building SQL statement
+            string sqlStmt = "INSERT INTO addresses (address, city, zipcode, customerID) ";
+            sqlStmt += "VALUES (@Address, @City, @Zipcode, @CustomerID)";
+
+            //New mySQL command
+            MySqlCommand dbCommand = new MySqlCommand(sqlStmt, dbConnection);
+
+            //Adding parameters
+            MySqlParameter param = new MySqlParameter("@Address", pickUpAddress);
+            dbCommand.Parameters.Add(param);
+
+            dbCommand.Parameters.Add(new MySqlParameter("@City", pickUpCity));
+            dbCommand.Parameters.Add(new MySqlParameter("@Zipcode", pickUpZipcode));
+            dbCommand.Parameters.Add(new MySqlParameter("@CustomerID", custID));
+
+            //Execute the query
+            dbCommand.ExecuteNonQuery();
+
+            //Close DB connection
+            dbConnection.Close();
+
+            //Open DB connection
+            dbConnection.Open();
+
+            //Building SQL statement
+            string sqlStmt2 = "INSERT INTO addresses (address, city, zipcode, customerID) ";
+            sqlStmt2 += "VALUES (@Address, @City, @Zipcode, @CustomerID)";
+
+            //New mySQL command
+            MySqlCommand dbCommand2 = new MySqlCommand(sqlStmt2, dbConnection);
+
+            //Adding parameters
+            MySqlParameter param2 = new MySqlParameter("@Address", dropOffAddress);
+            dbCommand.Parameters.Add(param2);
+
+            dbCommand.Parameters.Add(new MySqlParameter("@City", dropOffCity));
+            dbCommand.Parameters.Add(new MySqlParameter("@Zipcode", dropOffZipcode));
+            dbCommand.Parameters.Add(new MySqlParameter("@CustomerID", custID));
+
+            //Execute the query
+            dbCommand.ExecuteNonQuery();
+
+            //Close DB connection
+            dbConnection.Close();       
+    }
+
+
+    //Retired methods below
+    /*//Method for new requests - Date / Time?
     public void InsertDateRequested(string datedRequested)
     {
         //Open DB connection
@@ -172,7 +255,7 @@ public class clsDataLayer
 
         //Close DB connection
         dbConnection.Close();
-    }
+    }*/
 
 
 }
