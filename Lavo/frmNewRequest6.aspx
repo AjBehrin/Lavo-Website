@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LavoMaster.Master" AutoEventWireup="true" CodeFile="frmNewRequest6.aspx.cs" Inherits="WebApplication2.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" EnableEventValidation="false" MasterPageFile="~/LavoMaster.Master" AutoEventWireup="true" CodeFile="frmNewRequest6.aspx.cs" Inherits="WebApplication2.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -13,7 +13,7 @@
         }</style>
      <!--- This is the payment checkout-->  
     <div class="container tex">
-  <form class="form-horizontal" role="form">
+  <form runat="server" class="form-horizontal" role="form">
     <fieldset>
       <div class="text-center"><h2>Insert Card Info <i class="fa fa-credit-card-alt"></i></h2></div>
         <br />
@@ -76,7 +76,8 @@
       </div>
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">
-          <button type="button" class="btn btn-success" id="btnSubmit"><i class="fa fa-money"> Pay Now</i></button>
+          <asp:LinkButton ID="btnSubmit" runat="server" Text="Button" CssClass="btn btn-warning" OnClick="btnSubmit_ServerClick"><i class="fa fa-money"> Pay Now</i></asp:LinkButton>
+          <!--<button type="button" class="btn btn-success" id="btnSubmit2"><i class="fa fa-money"> Pay Now</i></button>-->
         </div>
       </div>
     </fieldset>

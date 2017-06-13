@@ -1,39 +1,47 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LavoMaster.Master" AutoEventWireup="true" CodeFile="frmNewRequest1.aspx.cs" Inherits="WebApplication2.frmNewRequest1" %>
+﻿<%@ Page Title="" Language="C#" EnableEventValidation="false" MasterPageFile="~/LavoMaster.Master" AutoEventWireup="true" CodeFile="frmNewRequest1.aspx.cs" Inherits="WebApplication2.frmNewRequest1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-  
- <div class="container text-center">
-  <div class="row">
-   
-<style>.control-label {
-            font-family: Calibri;
-            margin-bottom: 0;  
-            border: 0;
-            font-size: 20px !important;
-            letter-spacing: 4px;
-            opacity: 0.9;
-        }</style>
-    <!-- Form code begins -->
-    <form method="post">
-      <div class="form-group"> <!-- Date input -->
+    <form runat="server">
+        <div class="container text-center">
+            <div class="row">
 
-        <label class="control-label" for="date">Please Enter Wash Date</label>
-        
-        <br />
-        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
-      </div>
-       
-      <div class="form-group"> <!-- Submit button -->
-        <div class="text-center"><button type="submit" class="btn btn-warning" id="btnNext">Submit <span class="glyphicon glyphicon-send"></span></button>
-             </div>
-          </div>
-     </form>
-     <!-- Form code ends --> 
+                <style>
+                    .control-label {
+                        font-family: Calibri;
+                        margin-bottom: 0;
+                        border: 0;
+                        font-size: 20px !important;
+                        letter-spacing: 4px;
+                        opacity: 0.9;
+                    }
+                </style>
+                <!-- Form code begins -->
+                <form method="post">
+                    <div class="form-group">
+                        <!-- Date input -->
 
-    </div>
-     
- </div>
+                        <label class="control-label" for="date">Please Enter Wash Date</label>
+
+                        <br />
+                        <input runat="server" class="form-control" id="txtDate" name="date" placeholder="MM/DD/YYYY" type="text" />
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Submit button -->
+
+                        <div class="text-center">
+                            <asp:LinkButton ID="btnSubmit" runat="server" Text="Button" CssClass="btn btn-warning" OnClick="btnSubmit_ServerClick">Submit <span class="glyphicon glyphicon-send"></span></asp:LinkButton>
+                            <!--<button type="submit" class="btn btn-warning" id="btnNext">Submit <span class="glyphicon glyphicon-send"></span></button>-->
+                        </div>
+                    </div>
+                </form>
+                <!-- Form code ends -->
+
+            </div>
+
+        </div>
+    </form>
 
 </asp:Content>

@@ -11,7 +11,14 @@ namespace WebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        protected void btnSubmit_ServerClick(object sender, EventArgs e)
+        {
+            Session["Date"] = txtDate.Value;
+
+            Response.Redirect("~/frmNewRequest2.aspx");
         }
     }
 }

@@ -13,5 +13,11 @@ namespace WebApplication2
         {
 
         }
+
+        protected void btnSubmit_ServerClick(object sender, EventArgs e)
+        {
+
+            Response.Redirect("~/frmNewRequest7.aspx");
+        }
     }
 }

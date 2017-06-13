@@ -13,5 +13,15 @@ namespace WebApplication2
         {
 
         }
+
+        protected void btnSubmit_ServerClick(object sender, EventArgs e)
+        {
+            Session["Address1"] = txtReqAddress1.Value;
+            Session["Address2"] = txtReqAddress2.Value;
+            Session["City"] = txtCity.Value;
+            Session["Zipcode"] = txtZipCode.Value;
+
+            Response.Redirect("~/frmNewRequest5.aspx");
+        }
     }
 }

@@ -13,5 +13,27 @@ namespace WebApplication2
         {
 
         }
+
+        protected void btnSubmit_ServerClick(object sender, EventArgs e)
+        {          
+            Session["Package"] = packageSelect.SelectedIndex == 0 ? "uninformed" :
+                packageSelect.Items[packageSelect.SelectedIndex].Value;
+
+            if(packageSelect.Items[packageSelect.SelectedIndex].Value == "premiumOption")
+            {
+                Response.Redirect("~/frmNewRequestKeyAddresses.aspx");
+            }
+            else
+            {
+                Session["PickUpAddress"] = "N/A";
+                Session["PickUpCity"] = "N/A";
+                Session["PickUpZipcode"] = "N/A";
+                Session["DropOffAddress"] = "N/A";
+                Session["DropOffCity"] = "N/A";
+                Session["DropOffZipcode"] = "N/A";
+
+                Response.Redirect("~/frmNewRequest4.aspx");
+            }           
+        }
     }
 }
