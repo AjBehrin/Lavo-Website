@@ -2,7 +2,28 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style></style>
+       <style>
+        div.img-div{
+    height:200px;
+    width:200px;
+    overflow:hidden;
+    border-radius:50%;
+}
+
+.img-div img{
+    -webkit-transform:translate(-50%);
+    margin-left:100px;
+}
+
+.circle-image{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background-image:url("http://placekitten.com/g/200/400");
+    display:block;
+    background-position-y:25% 
+}
+    </style>
     <div class="container text-center">
 
 <div class="container">
@@ -12,25 +33,29 @@
   <!-- Left-aligned media object -->
   <div class="media">
     <div class="media-left">
-      <span class="glyphicon glyphicon-user"></span>
+      <div class="img-div">
+<img src="images\alan.png" />
+</div>
     </div>
     <div class="media-body">
-      <h4 class="media-heading">“Why go to the car wash when the car wash can come to you!” - Allen Wat</h4>
-      <p>
-Allen Wat founded LAVO in 2016. It all started when he invented a solution that not only cleaned cars but also leaves no waste. This solution allows us to come to you and clean your car. 
-</p>
+      <h2 class="media-heading">“<i>I want to create something to help my community and help everyone on their busy schedule so I thought of LAVO and to my surprise no one was doing yet! I’m really glad for the great reception that new yorkers had</i>”-Alen Wat</h2>
+      
     </div>
   </div>
   <hr>
+ 
+    
+
   
   <!-- Right-aligned media object -->
   <div class="media">
     <div class="media-body">
-      <h4 class="media-heading">“We care about our customers” - Weitny Anderson</h4>
-      <p>Weinty Anderson joined our team in 2016 with the intentions of making every customer experience their best experience. Weitny has had 6 years for customer service experience before joining us.</p>
+      <h2 class="media-heading">“<i>LAVO ensures that every customer receives the best treatment, I love what I do!</i>”  - Weitny Anderson</h2>  
     </div>
     <div class="media-right">
-      <span class="glyphicon glyphicon-user"></span>
+          <div class="img-div">
+<img src="images\Weinty.png" />
+</div>
     </div>
   </div>
 </div>
@@ -38,74 +63,80 @@ Allen Wat founded LAVO in 2016. It all started when he invented a solution that 
    
     <div class="media">
     <div class="media-left">
-      <span class="glyphicon glyphicon-user"></span>
+          <div class="img-div">
+<img src="images\Nuno.png" />
+</div>
     </div>
     <div class="media-body">
-      <h4 class="media-heading">“” - Nuno Correia</h4>
-      <p>
-Nuno Correia has attended and graduated from DeVry University. Nuno is in charge of the team and was directly involved in making and maintaining our website and app.
-</p>
+      <h2 class="media-heading">“<i>Leading the development of the Lavo Website and App was a great opportunity to be exposed to a leadership role on the development of IT systems. It was intense due to the tight schedule, but fun!</i>” - Nuno Correia, LAVO IT development team leader</h2>
+   
     </div>
   </div>
 
   <hr>
  <div class="media">
     <div class="media-body">
-      <h4 class="media-heading">“” - Jonah Reinhardt</h4>
-      <p>Jonah Reinhardt has attended and graduated from DeVry University. Jonah set up and maintains our database and app.</p>
+      <h2 class="media-heading">“<i>Leading the development of the LAVO app and database was a great opportunity to be part of. It was intense to work on the database. However, I was able to finish the database and the app.</i>” - Jonah Reinhardt, LAVO App & Database Developer</h2>
+    
     </div>
     <div class="media-right">
-      <span class="glyphicon glyphicon-user"></span>
+          <div class="img-div">
+<img src="images\Jonah.png" />
+</div>
     </div>
   </div>
  <hr>
          <div class="media">
     <div class="media-left">
-      <span class="glyphicon glyphicon-user"></span>
+          <div class="img-div">
+<img src="http://placekitten.com/g/400/200" />
+</div>
     </div>
     <div class="media-body">
-      <h4 class="media-heading">“” - Alex Behringer </h4>
-      <p>
-Alex Behringer has attended and graduated from DeVry University. Alex makes sure the website stays up and running.
-</p>
+      <h2 class="media-heading">“<i>Developing the LAVO website was truly a great opportunity to contribute as part of the team.I love what I do!</i>” - Alex Behringer, LAVO Website Back-End Developer  </h2>
+    
     </div>
   </div>
 <hr>
 <div class="media">
     <div class="media-body">
-      <h4 class="media-heading">“” - Michael Csikos</h4>
-      <p>Michael Csikos has attended and graduated from DeVry University. Michael implements and designs how the website looks.</p>
+      <h2 class="media-heading">“<i>Developing the LAVO website was a great opportunity to work on. I enjoy working on this project.</i>” - Michael Csikos, LAVO Website Front-End Developer</h2>
+     
     </div>
     <div class="media-right">
-      <span class="glyphicon glyphicon-user"></span>
+          <div class="img-div">
+<img src="images\Michael.png" />
+</div>
     </div>
   </div>
 <hr>
 <div class="media">
     <div class="media-left">
-      <span class="glyphicon glyphicon-user"></span>
+          <div class="img-div">
+<img src="images\allen.png" />
+</div>
     </div>
     <div class="media-body">
-      <h4 class="media-heading">“” - Allen Delrosario</h4>
-      <p>
-Allen Delrosario has attended and graduated from DeVry University. Allen is in charge of marketing and the content that goes onto our website.
-</p>
+      <h2 class="media-heading">“<i>I am truly humbled of working with these guys. The way they demonstrate things is nicely well done. Down in the future I would highly recommend working with these guys.</i>” - Allen Delrosario, Marketing Director</h2>
+ 
     </div>
   </div>
 <hr>
 <div class="media">
     <div class="media-body">
-      <h4 class="media-heading">“” - Steven Biala</h4>
-      <p>Michael Csikos has attended and graduated from DeVry University. Michael implements and designs how the website looks.</p>
+      <h2 class="media-heading">“<i>It was a fun experience helping LAVO and setting up their website. It was a very rewarding experience to help out an actual company compared to class work.</i>” - Steven Biala, Marketing Director</h2>
+     
     </div>
     <div class="media-right">
-      <span class="glyphicon glyphicon-user"></span>
+          <div class="img-div">
+<img src="images\steven.png" />
+</div>
     </div>
   </div>
         </div>
 
 
-
+<br />
 
 
 
@@ -134,8 +165,8 @@ Allen Delrosario has attended and graduated from DeVry University. Allen is in c
 <!---This is the caption underneath the slideshow--->
       <div class="carousel-item">
   <div class="carousel-caption d-none d-md-block">
-    <h3>We come to you!</h3>
-    <p>Always with a smile!</p>
+    <h3>We'll come right to you!</h3>
+    <p>Always with a smile and friendly service!</p>
   </div>
 </div>
       </div>
@@ -144,6 +175,8 @@ Allen Delrosario has attended and graduated from DeVry University. Allen is in c
           <br />
           <br>
           <br />
+    <br />
+    <br />
     <br />
     <br />
 

@@ -177,8 +177,10 @@
     </div>
     </div>
  <br />
+    
+    
+    <h2>Are you a business and looking for a quote? Please click<a href="frmBusiness.aspx"> HERE </a>and either E-Mail or call us. We can discuss special rates for coming to your business and washing your employees’ cars.</h2>
+<br />
     <br />
     <br />
-    <br />
-
 </asp:Content>

@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="frmAboutUs.aspx" />
+    <Content Include="frmBusiness.aspx" />
     <Content Include="frmDownload.aspx" />
     <Content Include="frmFeedback.aspx" />
     <Content Include="frmNewRequest1.aspx" />
@@ -118,6 +119,13 @@
     </Compile>
     <Compile Include="frmAboutUs.aspx.designer.cs">
       <DependentUpon>frmAboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusiness.aspx.cs">
+      <DependentUpon>frmBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmBusiness.aspx.designer.cs">
+      <DependentUpon>frmBusiness.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmDownload.aspx.cs">
       <DependentUpon>frmDownload.aspx</DependentUpon>
