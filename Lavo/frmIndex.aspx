@@ -30,24 +30,40 @@
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
       <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        <li data-target="#myCarousel" data-slide-to="7"></li>
       
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="images\hellcat1.png" alt="Hellcat" style="width:1200px;height:700px;">
+        <img src="images\hellcat.png" alt="Hellcat">
       </div>
 
       <div class="item">
-        <img src="images\mercedes1.jpg" alt="Mercedes" style="width:1200px;height:700px;">
+        <img src="images\mercedes.jpg" alt="Mercedes">
       </div>
  
         <div class="item">
-        <img src="images\Porsche1.jpg" alt="911" style="width:1200px;height:700px;">
+        <img src="images\Porsche.jpg" alt="911">
       </div>
          <div class="item">
-        <img src="images\firebird.jpg" alt="firebird" style="width:1200px;height:700px;">
+        <img src="images\Panigale.jpg" alt="Ducati">
+      </div>
+           <div class="item">
+        <img src="images\jeep.jpeg" alt="Jeep">
+      </div>
+           <div class="item">
+        <img src="images\frontier.jpg" alt="Nissan">
+      </div>
+           <div class="item">
+        <img src="images\optima.jpg" alt="Kia">
+      </div>
+        <div class="item">
+        <img src="images\mustang.jpg" alt="Ford">
       </div>
     </div>
 
@@ -55,7 +71,7 @@
       <div class="carousel-item">
   <div class="carousel-caption d-none d-md-block">
     <h3>Recently Washed Vehicles</h3>
-    <p>LAVO will make your car shine like new again!</p>
+    <p>LAVO will make your ride shine like new again!</p>
   </div>
 </div>
 
