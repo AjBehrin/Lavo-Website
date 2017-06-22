@@ -16,9 +16,9 @@
             <label class="control-label " for="region_id">Choose Your Package</label>
             <br />
             <select runat="server" class="form-control" id="packageSelect" name="packageSelect">
-                <option value="basic" id="dropdownBasic">Basic</option>
-                <option value="premium" id="dropdownPremium">Premium</option>
-                <option value="premiumOption" id="dropdownPremiumWithOption">Premium with Interior Cleaning</option>
+                <option value="Basic" id="dropdownBasic">Basic</option>
+                <option value="Premium" id="dropdownPremium">Premium</option>
+                <option value="Premium with Interior Cleaning" id="dropdownPremiumWithOption">Premium with Interior Cleaning</option>
 
 
             </select>

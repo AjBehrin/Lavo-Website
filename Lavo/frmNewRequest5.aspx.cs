@@ -13,17 +13,28 @@ namespace WebApplication2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            long custID;
+            string ID;
+
+            custID = (long)Session["ID"];
+            ID = custID.ToString();
+
             if (!Page.IsPostBack)
             {
                 //Getting request information
                 lblDate.Text = (string)Session["Date"];
-                lblSize.Text = "Coming Soon"; //(string)Session["SizeType"];
+                lblSize.Text = (string)Session["SizeType"];
                 lblPackage.Text = (string)Session["Package"];
                 lblAddress1.Text = (string)Session["Address1"];
                 lblAddress2.Text = (string)Session["Address2"];
                 lblCity.Text = (string)Session["City"];
                 lblZipcode.Text = (string)Session["Zipcode"];
-                //lblCustomerID.Text = (string)Session["CustomerID"];   
+                lblTime.Text = (string)Session["TimeSlot"];
+                lblPlateNumber.Text = (string)Session["PlateNumber"];
+                lblPlateState.Text = (string)Session["PlateState"];
+                lblModel.Text = (string)Session["Model"];
+
+                lblCustomerID.Text = ID;   
 
                 //Getting key pick up / drop off info
                 lblPickUpAddress.Text = (string)Session["PickUpAddress"];

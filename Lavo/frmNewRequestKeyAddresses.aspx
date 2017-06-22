@@ -52,7 +52,7 @@
                                     class="input-xlarge">
                             </div>
                         </div>
-
+                        <br />
                         <!-- Key pick up city input-->
                         <div class="control-group">
                             <label class="control-label">Pick Up City</label>
@@ -61,7 +61,7 @@
                                     class="input-xlarge">
                             </div>
                         </div>
-
+                        <br />
                         <!-- Key pick up zipcode input-->
                         <div class="control-group">
                             <label class="control-label">Pick Up Zipcode</label>
@@ -91,7 +91,7 @@
                                     class="input-xlarge">
                             </div>
                         </div>
-
+                        <br />
                         <!-- Key drop off city input-->
                         <div class="control-group">
                             <label class="control-label">Drop Off City</label>
@@ -100,7 +100,7 @@
                                     class="input-xlarge">
                             </div>
                         </div>
-
+                        <br />
                         <!-- Key drop off zipcode input-->
                         <div class="control-group">
                             <label class="control-label">Drop Off Zipcode</label>
@@ -109,7 +109,7 @@
                                 <p class="help-block"></p>
                             </div>
                         </div>
-                        
+                        <br />
                     </fieldset>
                 </form>
             </div>

@@ -16,7 +16,7 @@
 
     <form runat="server">
         <div class="container text-center">
-            <h2>Choose Your Vehicle Size</h2>
+            <h2>Vehicle Package Descriptions</h2>
             <br />
             <div id="exTab1" class="container">
                 <ul runat="server" class="nav nav-pills" id="tabs">
@@ -45,17 +45,17 @@
                                 text-align: center;
                             }
                         </style>
-                        <a href="#1a" data-toggle="tab" id="tabSmall">Small Sized<br />
+                        <a href="#1a" runat="server" data-toggle="tab" id="tabSmall">Small Sized<br />
                             <img src="images\3.png" style="width: 150px; height: 100px;"></a>
                     </li>
 
-                    <li><a href="#2a" data-toggle="tab" id="tabMedium">Medium Sized<br />
+                    <li><a href="#2a" runat="server" data-toggle="tab" id="tabMedium">Medium Sized<br />
                         <img src="images\2.png" style="width: 150px; height: 100px;"></a>
                     </li>
-                    <li><a href="#3a" data-toggle="tab" id="tabLarge">Large Sized<br />
+                    <li><a href="#3a" runat="server" data-toggle="tab" id="tabLarge">Large Sized<br />
                         <img src="images\4.png" style="width: 150px; height: 100px;"></a>
                     </li>
-                    <li><a href="#4a" data-toggle="tab" id="tabVeryLong">Very Long<br />
+                    <li><a href="#4a" runat="server" data-toggle="tab" id="tabVeryLong">Very Long<br />
                         <img src="images\1.png" style="width: 150px; height: 100px;"></a>
                     </li>
 
@@ -85,8 +85,61 @@
                     </div>
                 </div>
             </div>
-        </div>
+            <br />
 
+            <h2>Choose Vehicle Size Here</h2>
+            <br />
+            <div class="form-group container text-center">
+                <!-- Message input !-->
+                <label class="control-label " for="region_id">Choose Your Package</label>
+                <br />
+                <select runat="server" class="form-control" id="sizeSelect" name="sizeSelect">
+                    <option value="Small" id="dropdownSmall">Small</option>
+                    <option value="Medium" id="dropdownMedium">Medium</option>
+                    <option value="Large" id="dropdownLarge">Large</option>
+                    <option value="Very Long" id="dropdownVeryLong">Very Long</option>
+                </select>
+            </div>
+
+            <br />
+            <br />
+            <form class="form-horizontal">
+                <fieldset>
+
+                    <!-- Vehicle Information Form -->
+                    <h2>Please Enter Your Vehicle Information</h2>
+                    <br />
+
+                    <div class="control-group">
+                        <label class="control-label">Vehicle Plate Number</label>
+                        <div class="controls">
+                            <input runat="server" id="txtVehicleNumber" name="VehiclePlate" type="text" placeholder="Plate Number"
+                                class="input-xlarge">
+                        </div>
+                    </div>
+                    <br />
+                    <!-- Vehicle State Input-->
+                    <div class="control-group">
+                        <label class="control-label">Vehicle Plate State</label>
+                        <div class="controls">
+                            <input runat="server" id="txtVehicleState" name="VehicleState" type="text" placeholder="Plate State"
+                                class="input-xlarge">
+                        </div>
+                    </div>
+                    <br />
+                    <!-- Vehicle Model Information-->
+                    <div class="control-group">
+                        <label class="control-label">Vehicle Year, Make, and Model</label>
+                        <div class="controls">
+                            <input runat="server" id="txtVehicleModel" name="VehicleModel" type="text" placeholder="i.e. 2010 Dodge Charger" class="input-xlarge">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </div>
 
         <br />
 

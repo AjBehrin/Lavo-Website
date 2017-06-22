@@ -16,10 +16,10 @@ namespace WebApplication2
 
         protected void btnSubmit_ServerClick(object sender, EventArgs e)
         {          
-            Session["Package"] = packageSelect.SelectedIndex == 0 ? "uninformed" :
+            Session["Package"] = packageSelect.SelectedIndex == 0 ? "Basic" :
                 packageSelect.Items[packageSelect.SelectedIndex].Value;
 
-            if(packageSelect.Items[packageSelect.SelectedIndex].Value == "premiumOption")
+            if(packageSelect.Items[packageSelect.SelectedIndex].Value == "Premium with Interior Cleaning")
             {
                 Response.Redirect("~/frmNewRequestKeyAddresses.aspx");
             }

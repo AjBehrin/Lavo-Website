@@ -46,6 +46,7 @@
                                     class="input-xlarge">
                             </div>
                         </div>
+                        <br />
                         <!-- address-line2 input-->
                         <div class="control-group">
                             <label class="control-label">Address Line 2</label>
@@ -54,6 +55,7 @@
                                     class="input-xlarge">
                             </div>
                         </div>
+                        <br />
                         <!-- city input-->
                         <div class="control-group">
                             <label class="control-label">City/Town</label>
@@ -62,6 +64,7 @@
                                 <p class="help-block"></p>
                             </div>
                         </div>
+                        <br />
                         <!-- region input--
                 <div class="control-group">
                     <label class="control-label">State / Province / Region</label>
@@ -80,7 +83,8 @@
                                 <p class="help-block"></p>
                             </div>
                         </div>
-                        
+                        <br />
+
                     </fieldset>
                 </form>
             </div>

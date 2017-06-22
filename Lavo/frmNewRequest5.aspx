@@ -38,13 +38,23 @@
             <br />
             <h3>Request Information</h3>
             <br />
-            <asp:Label ID="Label1" runat="server" Text="Date & Time: " Font-Bold="True"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Date Selected: " Font-Bold="True"></asp:Label>
             <asp:Label ID="lblDate" runat="server"></asp:Label><br />
+            <asp:Label ID="Label12" runat="server" Text="Time Slot Selected: " Font-Bold="True"></asp:Label>
+            <asp:Label ID="lblTime" runat="server"></asp:Label><br />
             <asp:Label ID="Label7" runat="server" Text="Size Selected: " Font-Bold="True"></asp:Label>
             <asp:Label ID="lblSize" runat="server"></asp:Label><br />
             <asp:Label ID="Label2" runat="server" Text="Package Selected: " Font-Bold="True"></asp:Label>
             <asp:Label ID="lblPackage" runat="server"></asp:Label><br />
             <br />
+            <h3>Vehicle Information</h3>
+            <br />
+            <asp:Label ID="Label14" runat="server" Text="Plate Number: " Font-Bold="True"></asp:Label>
+            <asp:Label ID="lblPlateNumber" runat="server"></asp:Label><br />
+            <asp:Label ID="Label17" runat="server" Text="Plate State: " Font-Bold="True"></asp:Label>
+            <asp:Label ID="lblPlateState" runat="server"></asp:Label><br />
+            <asp:Label ID="Label19" runat="server" Text="Year, Make, & Model: " Font-Bold="True"></asp:Label>
+            <asp:Label ID="lblModel" runat="server"></asp:Label><br />
             <br />
             <h3>Address Information</h3>
             <br />
@@ -83,6 +93,7 @@
             <asp:Label ID="lblDropOffZipcode" runat="server"></asp:Label><br />
             <br />
             <asp:Label ID="lblCustomerID" runat="server"></asp:Label>
+            <br />
             <br />
             <br />
 

@@ -12,40 +12,18 @@ namespace WebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*HtmlGenericControl li = new HtmlGenericControl("li");
-            tabs.Controls.Add(li);
-
-            HtmlGenericControl anchor = new HtmlGenericControl("a");
-            anchor.Attributes.Add("href", "page.htm");
-            anchor.InnerText = "TabX";
-
-            li.Controls.Add(anchor);*/         
+   
         }
 
         protected void btnSubmit_ServerClick(object sender, EventArgs e)
         {
-            // If statements for the active tab
-            /*if (tabSmall.isActive)
-            {
-                Session["SizeType"] = "Small";
-            }
-            else if (tabMedium.isActive)
-            {
-                Session["SizeType"] = "Medium";
-            }
-            else if (tabLarge.isActive)
-            {
-                Session["SizeType"] = "Large";
-            }
-            else if (tabVeryLong.isActive)
-            {
-                Session["SizeType"] = "VeryLong";
-            }
-            else
-            {
-                Session["SizeType"] = "None selected";
-            }
-            */
+            //Selected drop down item
+            Session["SizeType"] = sizeSelect.SelectedIndex == 0 ? "Small" :
+                sizeSelect.Items[sizeSelect.SelectedIndex].Value;
+
+            Session["PlateNumber"] = txtVehicleNumber.Value;
+            Session["PlateState"] = txtVehicleState.Value;
+            Session["Model"] = txtVehicleModel.Value;
 
             Response.Redirect("~/frmNewRequest3.aspx");
         }
