@@ -89,7 +89,7 @@
          <div class="media">
     <div class="media-left">
           <div class="img-div">
-<img src="http://placekitten.com/g/400/200" />
+<img src="images\Alex.png" />
 </div>
     </div>
     <div class="media-body">
