@@ -8,6 +8,8 @@ using System.Net;
 using System.Data;
 using System.Configuration;
 using System.Windows.Forms;
+using System.Text;
+using System.Web.UI.WebControls;
 
 /// <summary>
 /// Summary description for clsDataLayer
@@ -105,16 +107,17 @@ public class clsDataLayer
 
     //Methods for processing a new request below
     //New request adding vehicle information
+    /*
     public Boolean NewRequestVehicleInfo(string plateNumber, string plateState, string model, string sizeType, string custID)
     {
         Boolean success = true;
-        MySqlCommand cmd = dbConnection.CreateCommand();
+        string sqlStmt = "INSERT INTO vehicles (plateNumber, plateState, model, sizeType, customerID) VALUES (?plateNumber, ?plateState, ?model, ?sizeType, ?customerID)";
+        MySqlCommand cmd = new MySqlCommand(sqlStmt, dbConnection);
         cmd.Connection = dbConnection;
 
         try
         {
             dbConnection.Open();
-            string sqlStmt = "INSERT INTO vehicles(plateNumber, plateState, model, sizeType, customerID ) values (?plateNumber , ?plateState , ?model , ?sizeType, ?customerID )";
             cmd.CommandText = sqlStmt;
             cmd.Parameters.AddWithValue("?plateNumber", plateNumber);
             cmd.Parameters.AddWithValue("?plateState", plateState);
@@ -136,22 +139,59 @@ public class clsDataLayer
         }
 
         return success;
+    }*/
+
+    
+    public void NewRequestVehicleInfo(string plateNumber, string plateState, string model, string sizeType, string custID)
+    {
+        try
+        {
+            //New DB connection
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
+
+            con.Open();
+
+            string sql = "INSERT INTO vehicles (plateNumber, plateState, model, sizeType, customerID) ";
+            sql += "VALUES (@plateNumber, @plateState, @model, @sizeType, @customerID)";
+
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+
+            MySqlParameter param = new MySqlParameter("@plateNumber", plateNumber);
+            cmd.Parameters.Add(param);
+
+            cmd.Parameters.Add(new MySqlParameter("@plateState", plateState));
+            cmd.Parameters.Add(new MySqlParameter("@model", model));
+            cmd.Parameters.Add(new MySqlParameter("@sizeType", sizeType));
+            cmd.Parameters.Add(new MySqlParameter("@customerID", custID));
+
+            //Execute the query
+            cmd.ExecuteNonQuery();
+
+            //Close connection
+            con.Close();
+        }
+        catch (MySqlException ex)
+        {
+            MessageBox.Show("3. Vehicle Insert Failure\nError code: " + ex.Number + "\n" + ex.StackTrace, "Vehicle information failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 
+    /*
     //New request adding request information (Date / Time / Service, etc)
-    public Boolean NewRequestOrder(string dateTime, string size, string custID)
+    public Boolean NewRequestOrder(string dateTime, string service, string custID)
     {
         Boolean success = true;
-        MySqlCommand cmd = dbConnection.CreateCommand();
-        cmd.Connection = dbConnection;
+        string sqlStmt = "INSERT INTO requests (dateRequested, serviceRequested, customerID) VALUES (?date, ?service, ?customerID)";
 
         try
         {
             dbConnection.Open();
-            string sqlStmt = "INSERT INTO requests(dateRequested, serviceRequested, customerID ) values (?date , ?service , ?customerID )";
+            MySqlCommand cmd = new MySqlCommand(sqlStmt, dbConnection);
+            cmd.Connection = dbConnection;
             cmd.CommandText = sqlStmt;
             cmd.Parameters.AddWithValue("?dateRequested", dateTime);
-            cmd.Parameters.AddWithValue("?service", size);
+            cmd.Parameters.AddWithValue("?service", service);
             cmd.Parameters.AddWithValue("?customerID", custID);
 
             //Execute the query
@@ -168,10 +208,44 @@ public class clsDataLayer
         }
 
         return success;
+    }*/
+
+    //New request adding request information (Date / Time / Service, etc)
+    public void NewRequestOrder(string dateTime, string service, string custID)
+    {
+        try
+        {
+            //New DB connection
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
+
+            con.Open();
+
+            string sql = "INSERT INTO requests (dateRequested, serviceRequested, customerID) ";
+            sql += "VALUES (@date, @service, @customerID)";
+
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+
+            MySqlParameter param = new MySqlParameter("@date", dateTime);
+            cmd.Parameters.Add(param);
+
+            cmd.Parameters.Add(new MySqlParameter("@service", service));
+            cmd.Parameters.Add(new MySqlParameter("@customerID", custID));
+
+            //Execute the query
+            cmd.ExecuteNonQuery();
+
+            //Close connection
+            con.Close();
+        }
+        catch (MySqlException ex)
+        {
+            MessageBox.Show("4. Order Insert Failure\nError code: " + ex.Number + "\n" + ex.StackTrace, "Order details failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 
-    //New request adding address
-    public Boolean NewRequestCarLocationAddress(string address, string city, string zipcode, string custID)
+        //New request adding address
+        public Boolean NewRequestCarLocationAddress(string address, string city, string zipcode, string custID)
     {
         Boolean success = true;
         int zip = Int32.Parse(zipcode);
@@ -182,7 +256,7 @@ public class clsDataLayer
         try
         {
             dbConnection.Open();
-            string sqlStmt = "INSERT INTO addresses(address, city, zipcode, customerID) values (?address , ?city , ?zipcode , ?customerID )";
+            string sqlStmt = "INSERT INTO addresses (address, city, zipcode, customerID) VALUES (?address, ?city, ?zipcode, ?customerID)";
             cmd.CommandText = sqlStmt;
             cmd.Parameters.AddWithValue("?address", address);
             cmd.Parameters.AddWithValue("?city", city);
@@ -218,7 +292,7 @@ public class clsDataLayer
         try
         {
             dbConnection.Open();
-            string sqlStmt = "INSERT INTO addresses(address, city, zipcode, customerID) values (?address , ?city , ?zipcode , ?customerID )";
+            string sqlStmt = "INSERT INTO addresses (address, city, zipcode, customerID) VALUES (?address, ?city, ?zipcode, ?customerID)";
             cmd.CommandText = sqlStmt;
             cmd.Parameters.AddWithValue("?address", pickUpAddress);
             cmd.Parameters.AddWithValue("?city", pickUpCity);
@@ -254,7 +328,7 @@ public class clsDataLayer
         try
         {
             dbConnection.Open();
-            string sqlStmt = "INSERT INTO addresses(address, city, zipcode, customerID) values (?address , ?city , ?zipcode , ?customerID )";
+            string sqlStmt = "INSERT INTO addresses (address, city, zipcode, customerID) VALUES (?address, ?city, ?zipcode, ?customerID)";
             cmd.CommandText = sqlStmt;
             cmd.Parameters.AddWithValue("?address", dropOffAddress);
             cmd.Parameters.AddWithValue("?city", dropOffCity);
@@ -276,6 +350,39 @@ public class clsDataLayer
         }
 
         return success;
+    }
+
+    public StringBuilder requestLookup(string customerID)
+    {
+        StringBuilder requestsTable = new StringBuilder();
+
+        dbConnection.Open();
+        string sql = "SELECT customerID, dateRequested, serviceRequested FROM requests WHERE customerID = ?custID";
+        MySqlCommand cmd = new MySqlCommand();
+        cmd.Connection = dbConnection;
+        cmd.CommandText = sql;
+        cmd.Parameters.AddWithValue("?custID", customerID);
+        MySqlDataReader dr = cmd.ExecuteReader();
+        requestsTable.Append("<table class=\"table table-bordered\">");
+        requestsTable.Append("<thead><tr><th>CustomerID</th><th>Requested Date</th><th>Requested Package</th>");
+        requestsTable.Append("</tr></thead>");
+
+        if (dr.HasRows)
+        {
+            while(dr.Read())
+            {
+                requestsTable.Append("<tbody><tr>");
+                requestsTable.Append("<td>" + dr[0] + "</td>");
+                requestsTable.Append("<td>" + dr[1] + "</td>");
+                requestsTable.Append("<td>" + dr[2] + "</td>");
+                requestsTable.Append("</tr></tbody>");
+            }
+        }
+
+        requestsTable.Append("</table>");
+
+        return requestsTable;
+        //PlaceHolderRequestsTable.Controls.Add(new Literal { Text = requestsTable.ToString() });
     }
 
     //Nuno's Authentication Code
@@ -393,10 +500,11 @@ public class clsDataLayer
         MySqlConnection conn = new MySqlConnection(connString);
         MySqlCommand cmd = conn.CreateCommand();
         cmd.Connection = conn;
+
         try
         {
             conn.Open();
-            //these are the mandatory fields to be inserted)
+            //these are the mandatory fields to be inserted
             string sql = "Insert into customers(name, address, city, state, zipcode,  phone, email, password) values ( ?name , ?address , ?city , ?state , ?zip , ?phone , ?email , ?password )";
             cmd.CommandText = sql;
             cmd.Parameters.AddWithValue("?name", name);
