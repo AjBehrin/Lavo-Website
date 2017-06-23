@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container text-center">
         <h2>With the advancements in technology and their convenience nothing like having an app on your phone or tablet to request a service on the go or check the status of your order. </h2>
-    <h2>Insert Download Link</h2>
+    <h2><a href="https://play.google.com/store/apps/details?id=secondmoonsoftware.com.lavoclient&rdid=secondmoonsoftware.com.lavoclient"> CLICK HERE TO DOWNLOAD APP! </a></h2>
         <h2>Requirements: Android OS 5.1 <i class="fa fa-android"></i> or higher<br /><small>Hitting the download button will connect you to the google store and that you agree with out Terms & Conditions (downloads a text file).</small></h2>
         <br />
         
