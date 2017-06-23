@@ -122,7 +122,7 @@
                     <div class="control-group">
                         <label class="control-label">Vehicle Plate State</label>
                         <div class="controls">
-                            <input runat="server" id="txtVehicleState" name="VehicleState" type="text" placeholder="Plate State"
+                            <input runat="server" id="txtVehicleState" name="VehicleState" type="text" placeholder="(i.e. IL for Illinois)"
                                 class="input-xlarge">
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                     <div class="control-group">
                         <label class="control-label">Vehicle Year, Make, and Model</label>
                         <div class="controls">
-                            <input runat="server" id="txtVehicleModel" name="VehicleModel" type="text" placeholder="i.e. 2010 Dodge Charger" class="input-xlarge">
+                            <input runat="server" id="txtVehicleModel" name="VehicleModel" type="text" placeholder="(i.e. 2010 Dodge Charger)" class="input-xlarge">
                             <p class="help-block"></p>
                         </div>
                     </div>

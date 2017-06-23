@@ -25,7 +25,7 @@
                         <label class="control-label" for="date">Please Enter Wash Date</label>
 
                         <br />
-                        <input runat="server" class="form-control" id="txtDate" name="date" placeholder="MM/DD/YYYY" type="text" />
+                        <input runat="server" class="form-control" id="txtDate" name="date" placeholder="YYYY-MM-DD  (i.e. 2017-08-05)" type="text" />
                     </div>
                     <br />
 
@@ -35,16 +35,16 @@
                         <br />
                         <p><b>IMPORTANT :</b> Please choose a time slot at least two hours in advance to give our washers time to process the order.</p>                      
                         <select runat="server" class="form-control" id="timeSelect" name="timeSelect">
-                            <option value="7:00 to 8:00 AM" id="sevenEightAM">7:00 - 8:00 AM</option>
-                            <option value="8:00 - 9:00 AM" id="eightNineAM">8:00 - 9:00 AM</option>
-                            <option value="9:00 - 10:00 AM" id="nineTenAM">9:00 - 10:00 AM</option>
-                            <option value="10:00 - 11:00 AM" id="tenElevenAM">10:00 - 11:00 AM</option>
-                            <option value="11:00 - 12:00 PM" id="elevenTwelvePM">11:00 - 12:00 PM</option>
-                            <option value="12:00 - 1:00 PM" id="twelveOnePM">12:00 - 1:00 PM</option>
-                            <option value="1:00 - 2:00 PM" id="oneTwoPM">1:00 - 2:00 PM</option>
-                            <option value="2:00 - 3:00 PM" id="twoThreePM">2:00 - 3:00 PM</option>
-                            <option value="3:00 - 4:00 PM" id="threeFourPM">3:00 - 4:00 PM</option>
-                            <option value="4:00 - 5:00 PM" id="fourFivePM">4:00 - 5:00 PM</option>
+                            <option value="07:00:00" id="sevenEightAM">7:00 - 8:00 AM</option>
+                            <option value="08:00:00" id="eightNineAM">8:00 - 9:00 AM</option>
+                            <option value="09:00:00" id="nineTenAM">9:00 - 10:00 AM</option>
+                            <option value="10:00:00" id="tenElevenAM">10:00 - 11:00 AM</option>
+                            <option value="11:00:00" id="elevenTwelvePM">11:00 - 12:00 PM</option>
+                            <option value="12:00:00" id="twelveOnePM">12:00 - 1:00 PM</option>
+                            <option value="13:00:00" id="oneTwoPM">1:00 - 2:00 PM</option>
+                            <option value="14:00:00" id="twoThreePM">2:00 - 3:00 PM</option>
+                            <option value="15:00:00" id="threeFourPM">3:00 - 4:00 PM</option>
+                            <option value="16:00:00" id="fourFivePM">4:00 - 5:00 PM</option>
 
                         </select>
                     </div>

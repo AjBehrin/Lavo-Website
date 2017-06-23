@@ -17,7 +17,7 @@ namespace WebApplication2
         protected void btnSubmit_ServerClick(object sender, EventArgs e)
         {
             Session["Date"] = txtDate.Value;
-            Session["TimeSlot"] = timeSelect.SelectedIndex == 0 ? "7:00 to 8:00 AM" :
+            Session["TimeSlot"] = timeSelect.SelectedIndex == 0 ? "07:00:00" :
                 timeSelect.Items[timeSelect.SelectedIndex].Value;
 
             Response.Redirect("~/frmNewRequest2.aspx");
