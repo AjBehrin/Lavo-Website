@@ -1,0 +1,349 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="LavoMaster.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Lavo Car Washing Service</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+  <!---  <style type="text/css">
+   body { background: cyan !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style> --->
+</head>
+<body>
+    <style>h2 {
+            font-family: Calibri;
+            margin-bottom: 0;  
+            border: 0;
+            font-size: 20px !important;
+            letter-spacing: 4px;
+            opacity: 0.9;
+        }</style>
+
+<style>.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+color: #00FFFF;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
+ a:hover, .navbar-default .navbar-nav > .active > a:focus {
+color: cyan; /*BACKGROUND color for active*/
+background-color: #00FFFF;
+}
+
+  .navbar-default {
+    background-color: #00FFFF;
+    border-color: #00FFFF;
+}
+
+  .dropdown-menu > li > a:hover,
+   .dropdown-menu > li > a:focus {
+    color: #262626;
+   text-decoration: none;
+  background-color: #66CCFF;  /*change color of links in drop down here*/
+   }
+
+ .nav > li > a:hover,
+ .nav > li > a:focus {
+    text-decoration: none;
+    background-color: silver; /*Change rollover cell color here*/
+  }
+
+
+  .navbar-default .navbar-nav > li > a {
+   color: white; /*Change active text color here*/
+    }
+
+  <style>
+        
+
+        .container {
+            padding: 80px 120px;
+        }
+
+        .person {
+            border: 10px solid transparent;
+            margin-bottom: 25px;
+            width: 80%;
+            height: 80%;
+            opacity: 0.7;
+        }
+
+            .person:hover {
+                border-color: #f1f1f1;
+            }
+
+        
+
+        .bg-1 {
+            background: #2d2d30;
+            color: #bdbdbd;
+        }
+
+            .bg-1 h3 {
+                color: #fff;
+            }
+
+            .bg-1 p {
+                font-style: italic;
+            }
+
+        .list-group-item:first-child {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+        }
+
+        .list-group-item:last-child {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        
+        .btn {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #f1f1f1;
+            border-radius: 0;
+            transition: .2s;
+        }
+
+            .btn:hover, .btn:focus {
+                border: 1px solid #333;
+                background-color: #fff;
+                color: #000;
+            }
+
+       
+
+        .nav-tabs li a {
+            color: #777;
+        }
+
+      
+
+        .navbar {
+            font-family: Montserrat, sans-serif;
+            margin-bottom: 0;
+            background-color: #2d2d30;
+            border: 0;
+            font-size: 11px !important;
+            letter-spacing: 4px;
+            opacity: 0.9;
+        }
+
+            .navbar li a, .navbar .navbar-brand {
+                color: #d5d5d5 !important;
+            }
+
+        .navbar-nav li a:hover {
+            color: #fff !important;
+        }
+
+        .navbar-nav li.active a {
+            color: #fff !important;
+            background-color: #29292c !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+        }
+
+        .open .dropdown-toggle {
+            color: #fff;
+            background-color: #555 !important;
+        }
+
+        .dropdown-menu li a {
+            color: #000 !important;
+        }
+
+            .dropdown-menu li a:hover {
+                background-color: red !important;
+            }
+
+
+
+        .form-control {
+            border-radius: 0;
+        }
+
+        textarea {
+            resize: none;
+        }
+        
+       
+        </style>
+    
+
+
+
+    <header class="navbar-default navbar-fixed-top">
+  
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+          
+      </button>
+      <a class="navbar-brand" href="frmIndex.aspx">LAVO</a>
+    </div>
+
+
+    
+        
+        <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        
+<!--- This is for the dropdown and button area with popups. Need to simply put this on a new page for services and make it work.
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services <span class="glyphicon glyphicon-circle-arrow-down"></span>
+          
+            
+            <ul class="dropdown-menu">
+            <li><a href="#"><button onclick="myFunction()"><h2>Basic Wash</h2></button>
+
+<script>
+    function myFunction() {
+        alert("The Basic Wash info goes here");
+    }
+</script></a></li>
+            <li><a href="#"><button onclick="myFunction()"><h2>Premium Wash</h2></button>
+
+<script>
+    function myFunction() {
+        alert("The Premium Wash info goes here");
+    }
+</script></a></li></a></li>
+            <li><a href="#"><button onclick="myFunction()"><h2>Deluxe Wash</h2></button>
+
+<script>
+    function myFunction() {
+        alert("The Deluxe Wash info goes here");
+    }
+</script></a></li></a></li>
+          </ul>
+        </li>
+
+       end of code for services ---->
+        <li class=""><a href="frmDownload.aspx">Download</a></li>
+        <li class=""><a href="frmAboutUs.aspx">About</a></li>
+        <li class=""><a href="frmServices.aspx">Services</a></li>
+        <li class=""><a href="frmStaff.aspx">Staff</a></li>
+        <li class=""><a href="frmFeedback.aspx">Feedback</a></li>
+        <li class=""><a href="frmContactUs.aspx">Contact</a></li>
+      </ul>
+            
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="frmLogin.aspx"><span class="glyphicon glyphicon-user"></span> Sign-Up/Login</a></li>
+  
+<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-plus"></span>New Request</a>
+          <ul class="dropdown-menu">
+            <li><a href="frmNewRequest1.aspx">Wash my car!</a></li>
+            <li><a href="frmViewStatus1.aspx">View Order</a></li>
+              </ul>
+            
+              <!---  <li><a href="#"><span class="glyphicon glyphicon-plus"></span> New Request</a></li>  -->
+        
+
+      </ul>
+    </div>
+  </div>
+</nav>
+ </header>
+    
+     <div class="container container-fluid">
+
+     <br>
+      <br>
+    <br />
+         <br />
+       <style>h1 {
+            font-family: Calibri;
+            margin-bottom: 0;  
+            border: 0;
+            letter-spacing: 4px;
+            opacity: 0.9;
+        }</style>
+            <h1><img src ="images\logovan.jpg" style="width:200px;height:150px;">LAVO <small><strong>"</strong> <i>The car washing service that comes to your parking spot</i><strong>"</strong></small></h1>
+  
+         </div>  
+    <style>
+        hr {
+
+    height: 2px;
+
+    background-color:#555;
+
+    margin-top: 20px;
+
+    margin-bottom: 20px;
+
+    width: 75%;
+
+}
+    </style>
+  <hr />
+   
+    <div class="container">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+ 
+
+
+
+
+        </asp:ContentPlaceHolder>
+
+
+
+
+
+    </div>
+<!--This is the Logo and the Social icons at the bottom of the page
+        <div class="container text-center">
+            <p><img src ="images\logovan.jpg" style="width:200px;height:150px;"></p> --->
+<footer>
+
+  <div>   
+      <nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container text-center">
+      <br />
+   
+      <a href="frmIndex.aspx"><i class="btn btn-primary btn-xs">Home</i></a>
+      <a href="frmDownload.aspx"><i class="btn btn-success btn-xs">Download</i></a>
+      <a href="frmAboutUs.aspx"><i class="btn btn-info btn-xs">About</i></a>
+      <a href="frmServices.aspx"><i class="btn btn-warning btn-xs">Services</i></a>
+      <a href="frmStaff.aspx"><i class="btn btn-danger btn-xs">Staff</i></a>
+      <a href="frmContactUs.aspx"><i class="btn btn-default btn-xs">Contact</i></a>
+<br />
+      <br />
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-google-plus"></i></a>
+    <a href="#"><i class="fa fa-skype"></i></a>
+  </div>
+          </nav>
+      </div>
+    </footer>         
+
+
+    
+    
+    
+    
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+  
+</body>
+</html>

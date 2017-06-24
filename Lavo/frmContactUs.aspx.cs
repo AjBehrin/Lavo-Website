@@ -5,10 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class frmCustomerLogin : System.Web.UI.Page
+namespace WebApplication2
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class WebForm4 : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
