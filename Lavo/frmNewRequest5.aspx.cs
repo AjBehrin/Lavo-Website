@@ -14,7 +14,7 @@ namespace WebApplication2
         string vehicleSaved = "0";
         string vehiclePrimary = "0";
         long custID;
-        string ID;
+        string ID = "";
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -45,8 +45,54 @@ namespace WebApplication2
 
             if (!Page.IsPostBack)
             {
+                //If statements for setting the timeslot 
+                if(timeSlot == "07:00:00")
+                {
+                    lblTime.Text = "7:00 - 8:00 AM";
+                }
+                else if (timeSlot == "08:00:00")
+                {
+                    lblTime.Text = "8:00 - 9:00 AM";
+                }
+                else if (timeSlot == "09:00:00")
+                {
+                    lblTime.Text = "9:00 - 10:00 AM";
+                }
+                else if (timeSlot == "10:00:00")
+                {
+                    lblTime.Text = "10:00 - 11:00 AM";
+                }
+                else if (timeSlot == "11:00:00")
+                {
+                    lblTime.Text = "11:00 - 12:00 PM";
+                }
+                else if (timeSlot == "12:00:00")
+                {
+                    lblTime.Text = "12:00 - 1:00 PM";
+                }
+                else if (timeSlot == "13:00:00")
+                {
+                    lblTime.Text = "1:00 - 2:00 PM";
+                }
+                else if (timeSlot == "14:00:00")
+                {
+                    lblTime.Text = "2:00 - 3:00 PM";
+                }
+                else if (timeSlot == "15:00:00")
+                {
+                    lblTime.Text = "3:00 - 4:00 PM";
+                }
+                else if (timeSlot == "16:00:00")
+                {
+                    lblTime.Text = "4:00 - 5:00 PM";
+                }
+                else
+                {
+                    lblTime.Text = "N/A";
+                }
+
                 //If statements for setting size label
-                if((string)Session["SizeType"] == "1")
+                if ((string)Session["SizeType"] == "1")
                 {
                     lblSize.Text = "Small";
                 }
@@ -75,7 +121,7 @@ namespace WebApplication2
                 lblAddress2.Text = address2;
                 lblCity.Text = city;
                 lblZipcode.Text = zipCode;
-                lblTime.Text = timeSlot;
+                //lblTime.Text = timeSlot;
                 lblPlateNumber.Text = plateNum;
                 lblPlateState.Text = plateState;
                 lblModel.Text = model;
@@ -97,11 +143,12 @@ namespace WebApplication2
         {
             string address = lblAddress1.Text + " " + lblAddress2.Text;
             string date = lblDate.Text;
-            string time = lblTime.Text;
+            string time = (string)Session["TimeSlot"];
             string formatDate = date + " " + time;
             string status = "Waiting to be processed";
             string performance = "5";
 
+            Session["FormattedDate"] = formatDate;
             Session["CurrentStatus"] = status;
 
             //Methods to fill the requested order below
@@ -131,8 +178,8 @@ namespace WebApplication2
                 myDataLayer.NewRequestOrder(formatDate, lblPackage.Text, status, performance, addressID, vehicleID, ID);
             }
 
-            
-            //Redirect to payment page
+
+            //Redirect to payment page 
             Response.Redirect("~/frmOrderLookup.aspx");
         }
 

@@ -15,12 +15,24 @@ public partial class frmOrderLookup : System.Web.UI.Page
     {
         long custID = (long)Session["ID"] ;
         string ID = custID.ToString();
-        StringBuilder str = new StringBuilder();
+        string address = (string)Session["FormattedDate"];
+        StringBuilder strRequest = new StringBuilder();
+        StringBuilder strAddress = new StringBuilder();
+        StringBuilder strVehicle = new StringBuilder();
 
-        if(!Page.IsPostBack)
+        if (!Page.IsPostBack)
         {
-            str = myDataLayer.requestLookup(ID);
-            PlaceHolderRequestsTable.Controls.Add(new Literal { Text = str.ToString() });
+            //Building request table
+            strRequest = myDataLayer.requestLookup(ID);
+            PlaceHolderRequestsTable.Controls.Add(new Literal { Text = strRequest.ToString() });
+
+            //Building address table
+            strAddress = myDataLayer.addressLookup(ID);
+            PlaceHolderAddressTable.Controls.Add(new Literal { Text = strAddress.ToString() });
+
+            //Building vehicle table
+            strVehicle = myDataLayer.vehicleLookup(ID);
+            PlaceHolderVehiclesTable.Controls.Add(new Literal { Text = strVehicle.ToString() });
         }
     }
 
