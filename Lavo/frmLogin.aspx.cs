@@ -22,11 +22,11 @@ namespace WebApplication2
         {
             try
             {
-                String txtLogin = txtLogInEmail.Value.Trim();
-                String txtPassword = txtLogInPassword.Value.Trim();
+                String txtLogin = txtLoginEmail.Value.Trim();
+                String txtPassword = txtLoginPassword.Value.Trim();
                 if (!DL.authenticate(txtLogin, txtPassword))
                 {
-                    lblErrorMessage.Text = "Username/Password doesn't match our records or system is unavailable.  If problem persists please contact us ";
+                    lblErrorMessage.Text = "Username/Password doesn't match our records or system is unavailable.If problem persists please contact us ";
                     return;
                 }
                 else
@@ -44,10 +44,12 @@ namespace WebApplication2
                             Session["Name"] = name;
                             Session["ID"] = id;
                             String requestedPage = (string)Session["Request"];
-                            MessageBox.Show("Welcome back " + (string)Session["Name"] + "!");
+                            MessageBox.Show("Welcome back " + (string)Session["Name"] + "!\nYour requested page is :" + (string)Session["Request"]);
                             if (!String.IsNullOrEmpty(requestedPage))
                             {
                                 Response.Redirect("frmNewRequest1.aspx");
+                                //HttpContext.Current.Response.Redirect(requestedPage, false);
+                                //HttpContext.Current.ApplicationInstance.CompleteRequest();
                             }
                             else
                             {
@@ -80,16 +82,18 @@ namespace WebApplication2
                             Session["Name"] = name;
                             Session["ID"] = id;
                             MessageBox.Show("Welcome back " + (string)Session["Name"] + "!");
-                            Response.Redirect("frmDownloadApp2.aspx");
+                            Response.Redirect("frmDownloadApp2.aspx", false);
+                            HttpContext.Current.ApplicationInstance.CompleteRequest();
                             break;
 
-                        case "Customer rep":
+                        case "Customer Rep":
 
-                            Session["previlege"] = "Admin";
+                            Session["Previlege"] = "Admin";
                             Session["Name"] = name;
                             Session["ID"] = id;
                             MessageBox.Show("Welcome back " + (string)Session["Name"] + "!");
                             Response.Redirect("frmManageOrders.aspx");
+
                             break;
                         default:
                             lblErrorMessage.Text = "Email or Password is incorrect. Please try again and contact us if problem persists and we will glad to help you";
@@ -110,7 +114,7 @@ namespace WebApplication2
                 lblErrorMessage.Text = "Password does not match in both fields.";
                 return;
             }
-            String email = txtSignUpEmail.Value;
+            String email = txtSignupEmail.Value;
             if (DL.lookupExisting(email))
             {
                 lblErrorMessage.Text = "Email already registered in our records.";
@@ -122,6 +126,7 @@ namespace WebApplication2
                 String name = txtName.Value;
                 String phone = txtPhone.Value;
                 String address = txtAddress.Value;
+
                 if (string.IsNullOrEmpty(address))
                 {
                     address = "0";
@@ -141,6 +146,7 @@ namespace WebApplication2
                 {
                     state = "0";
                 }
+
                 try
                 {
                     if (DL.addUser(email, password, name, phone, address, city, state, zip))
@@ -204,5 +210,5 @@ namespace WebApplication2
                 }
             }*/
 
-        }
+    }
     }

@@ -22,12 +22,12 @@
 
                             <div style="margin-bottom: 25px" class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input id="txtLogInEmail" runat="server" type="text" class="form-control" name="username" value="" placeholder="username or email">
+                                <input id="txtLoginEmail" runat="server" type="text" class="form-control" name="username" value="" placeholder="username or email">
                             </div>
 
                             <div style="margin-bottom: 25px" class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input id="txtLogInPassword" runat="server" type="password" class="form-control" name="password" placeholder="password">
+                                <input id="txtLoginPassword" runat="server" type="password" class="form-control" name="password" placeholder="password">
                             </div>
 
                             <asp:CheckBox ID="chkRememberMe" runat="server" Text="Remember me" ></asp:CheckBox>   
@@ -81,7 +81,7 @@
                             <div class="form-group">
                                 <label for="email" class="col-md-3 control-label">Email</label>
                                 <div class="col-md-9">
-                                    <input type="text" runat="server" class="form-control" name="email" placeholder="Email Address" id="txtSignUpEmail">
+                                    <input type="text" runat="server" class="form-control" name="email" placeholder="Email Address" id="txtSignupEmail">
                                 </div>
                             </div>
 
