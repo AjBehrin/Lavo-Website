@@ -14,7 +14,7 @@ public partial class frmAddressLookUp : System.Web.UI.Page
     {
         long custID = 1;//(long)Session["ID"]
         string ID = custID.ToString();
-        string address = "2345 Dunno St.";
+        string address = (string)Session["FormattedDate"];
         StringBuilder strAddress = new StringBuilder();
         StringBuilder strVehicle = new StringBuilder();
 

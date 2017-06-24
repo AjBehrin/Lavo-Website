@@ -144,13 +144,12 @@ public class clsDataLayer
 
     public void NewRequestVehicleInfo(string plateNumber, string plateState, string model, string sizeType, string saved, string primary, string custID)
     {
+        //New DB connection
+        MySqlConnection con = new MySqlConnection();
+        con.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
 
         try
         {
-            //New DB connection
-            MySqlConnection con = new MySqlConnection();
-            con.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
-
             con.Open();
 
             string sql = "INSERT INTO vehicles (plateNumber, plateState, model, sizeType, saved, primaryDefault, customerID) ";
@@ -176,7 +175,8 @@ public class clsDataLayer
         }
         catch (MySqlException ex)
         {
-            MessageBox.Show("3. Vehicle Insert Failure\nError code: " + ex.Number + "\n" + ex.StackTrace, "Vehicle information failure", MessageBoxButtons.OK, MessageBoxIcon.Error);            
+            MessageBox.Show("3. Vehicle Insert Failure\nError code: " + ex.Number + "\n" + ex.StackTrace, "Vehicle information failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            con.Close();
         }
 
     }
@@ -299,12 +299,12 @@ public class clsDataLayer
     //New request adding request information (Date / Time / Service, etc)
     public void NewRequestOrder(string dateTime, string service, string status, string performance, string addressID, string vehicleID, string custID)
     {
+        //New DB connection
+        MySqlConnection con = new MySqlConnection();
+        con.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
+
         try
         {
-            //New DB connection
-            MySqlConnection con = new MySqlConnection();
-            con.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
-
             con.Open();
 
             string sql = "INSERT INTO requests (dateRequested, serviceRequested, status, washerPerformance, washAddressID, vehicleID, customerID) ";
@@ -331,18 +331,19 @@ public class clsDataLayer
         catch (MySqlException ex)
         {
             MessageBox.Show("4. Order Insert Failure\nError code: " + ex.Number + "\n" + ex.StackTrace, "Order details failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            con.Close();
         }
     }
 
     //New request adding request information (Date / Time / Service, etc) /w Key pickup and dropoff
     public void NewRequestOrderPremium(string dateTime, string service, string status, string performance, string pickUpID, string dropOffID, string addressID, string vehicleID, string custID)
     {
+        //New DB connection
+        MySqlConnection con = new MySqlConnection();
+        con.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
+
         try
         {
-            //New DB connection
-            MySqlConnection con = new MySqlConnection();
-            con.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
-
             con.Open();
 
             string sql = "INSERT INTO requests (dateRequested, serviceRequested, status, washerPerformance, keyPickupAddressID, keyDropoffAddressID, washAddressID, vehicleID, customerID) ";
@@ -371,6 +372,7 @@ public class clsDataLayer
         catch (MySqlException ex)
         {
             MessageBox.Show("12. Order Insert /w Premium Failure\nError code: " + ex.Number + "\n" + ex.StackTrace, "Order details /w premium failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            con.Close();
         }
     }
 
@@ -497,14 +499,18 @@ public class clsDataLayer
         Int32 ID = Int32.Parse(custID);
         Int32 zip = Int32.Parse(pickUpZipcode);
 
+        //New DB connection
+        MySqlConnection conn = new MySqlConnection();
+        conn.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
+
         try
         {
-            dbConnection.Open();
+            conn.Open();
 
             string sql = "INSERT INTO addresses (customerID, address, city, zipcode) ";
             sql += "VALUES (@customerID, @address, @city, @zipcode)";
 
-            MySqlCommand cmd = new MySqlCommand(sql, dbConnection);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
 
             MySqlParameter param = new MySqlParameter("@customerID", ID);
             cmd.Parameters.Add(param);
@@ -517,12 +523,12 @@ public class clsDataLayer
             cmd.ExecuteNonQuery();
 
             //Close DB connection
-            dbConnection.Close();
+            conn.Close();
         }
         catch (MySqlException ex)
         {
             MessageBox.Show("6. Address Insert Failure\nError code: " + ex.Number + "\n" + ex.StackTrace, "Pick up address failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            dbConnection.Close();
+            conn.Close();
         }
 
     }
@@ -533,14 +539,18 @@ public class clsDataLayer
         Int32 ID = Int32.Parse(custID);
         Int32 zip = Int32.Parse(dropOffZipcode);
 
+        //New DB connection
+        MySqlConnection conn = new MySqlConnection();
+        conn.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
+
         try
         {
-            dbConnection.Open();
+            conn.Open();
 
             string sql = "INSERT INTO addresses (customerID, address, city, zipcode) ";
             sql += "VALUES (@customerID, @address, @city, @zipcode)";
 
-            MySqlCommand cmd = new MySqlCommand(sql, dbConnection);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
 
             MySqlParameter param = new MySqlParameter("@customerID", ID);
             cmd.Parameters.Add(param);
@@ -553,12 +563,12 @@ public class clsDataLayer
             cmd.ExecuteNonQuery();
 
             //Close DB connection
-            dbConnection.Close();
+            conn.Close();
         }
         catch (MySqlException ex)
         {
             MessageBox.Show("7. Address Insert Failure\nError code: " + ex.Number + "\n" + ex.StackTrace, "Drop off address failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            dbConnection.Close();
+            conn.Close();
         }
 
     }
@@ -567,10 +577,14 @@ public class clsDataLayer
     {
         StringBuilder requestsTable = new StringBuilder();
 
-        dbConnection.Open();
+        //New DB connection
+        MySqlConnection conn = new MySqlConnection();
+        conn.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
+
+        conn.Open();
         string sql = "SELECT customerID, dateRequested, serviceRequested FROM requests WHERE customerID = ?custID";
         MySqlCommand cmd = new MySqlCommand();
-        cmd.Connection = dbConnection;
+        cmd.Connection = conn;
         cmd.CommandText = sql;
         cmd.Parameters.AddWithValue("?custID", customerID);
         MySqlDataReader dr = cmd.ExecuteReader();
@@ -592,6 +606,8 @@ public class clsDataLayer
 
         requestsTable.Append("</table>");
 
+        conn.Close();
+
         return requestsTable;
         //PlaceHolderRequestsTable.Controls.Add(new Literal { Text = requestsTable.ToString() });
     }
@@ -600,10 +616,14 @@ public class clsDataLayer
     {
         StringBuilder addressTable = new StringBuilder();
 
-        dbConnection.Open();
+        //New DB connection
+        MySqlConnection conn = new MySqlConnection();
+        conn.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
+
+        conn.Open();
         string sql = "SELECT customerID, address, city, zipcode FROM addresses WHERE customerID = ?custID";
         MySqlCommand cmd = new MySqlCommand();
-        cmd.Connection = dbConnection;
+        cmd.Connection = conn;
         cmd.CommandText = sql;
         cmd.Parameters.AddWithValue("?custID", customerID);
         MySqlDataReader dr = cmd.ExecuteReader();
@@ -626,7 +646,7 @@ public class clsDataLayer
 
         addressTable.Append("</table>");
 
-        dbConnection.Close();
+        conn.Close();
 
         return addressTable;
         //PlaceHolderRequestsTable.Controls.Add(new Literal { Text = requestsTable.ToString() });
@@ -636,10 +656,14 @@ public class clsDataLayer
     {
         StringBuilder addressTable = new StringBuilder();
 
-        dbConnection.Open();
+        //New DB connection
+        MySqlConnection conn = new MySqlConnection();
+        conn.ConnectionString = ConfigurationManager.ConnectionStrings["lavoConnectionString"].ToString();
+
+        conn.Open();
         string sql = "SELECT plateNumber, plateState, model, sizeType, saved FROM vehicles WHERE customerID = ?custID";
         MySqlCommand cmd = new MySqlCommand();
-        cmd.Connection = dbConnection;
+        cmd.Connection = conn;
         cmd.CommandText = sql;
         cmd.Parameters.AddWithValue("?custID", customerID);
         MySqlDataReader dr = cmd.ExecuteReader();
@@ -663,7 +687,7 @@ public class clsDataLayer
 
         addressTable.Append("</table>");
 
-        dbConnection.Close();
+        conn.Close();
 
         return addressTable;
         //PlaceHolderRequestsTable.Controls.Add(new Literal { Text = requestsTable.ToString() });
