@@ -106,12 +106,18 @@
                 </div>
             </div>
 
-
+            <div class="form-group">
+                <!-- Submit button -->
+                <div class="text-center">
+                    <asp:LinkButton ID="btnPrevious" runat="server" Text="Button" CssClass="btn btn-warning" OnClick="btnPrevious_ServerClick">Go Back <span class="glyphicon glyphicon-backward"></span></asp:LinkButton>
+                    <!--<button type="submit" class="btn btn-warning" id="btnPrevious2">Go Back <span class="glyphicon glyphicon-remove"></span></button>-->
+                </div>
+            </div>
 
             <div class="form-group">
                 <!-- Submit button -->
                 <div class="text-center">
-                    <asp:LinkButton ID="btnPrevious" runat="server" Text="Button" CssClass="btn btn-warning" OnClick="btnPrevious_ServerClick">Go Back <span class="glyphicon glyphicon-remove"></span></asp:LinkButton>
+                    <asp:LinkButton ID="btnCancel" runat="server" Text="Button" CssClass="btn btn-warning" OnClick="btnCancel_ServerClick">Cancel <span class="glyphicon glyphicon-remove"></span></asp:LinkButton>
                     <!--<button type="submit" class="btn btn-warning" id="btnPrevious2">Go Back <span class="glyphicon glyphicon-remove"></span></button>-->
                 </div>
             </div>

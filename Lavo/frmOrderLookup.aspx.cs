@@ -23,4 +23,10 @@ public partial class frmOrderLookup : System.Web.UI.Page
             PlaceHolderRequestsTable.Controls.Add(new Literal { Text = str.ToString() });
         }
     }
+
+    //Next page button click
+    protected void btnNext_ServerClick(object sender, EventArgs e)
+    {
+        Response.Redirect("~/frmNewRequest6.aspx");
+    }
 }

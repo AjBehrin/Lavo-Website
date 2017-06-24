@@ -89,6 +89,9 @@
                 </form>
             </div>
         </div>
+        <br />
+        <asp:Label ID="lblError" runat="server"></asp:Label>
+        <br />
 
         <div class="text-center">
             <asp:LinkButton ID="LinkButton1" runat="server" Text="Button" CssClass="btn btn-warning" OnClick="btnSubmit_ServerClick">Submit <span class="glyphicon glyphicon-send"></span></asp:LinkButton>

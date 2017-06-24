@@ -11,11 +11,14 @@ namespace WebApplication2
     {
         clsDataLayer myDataLayer = new clsDataLayer();
 
+        string vehicleSaved = "0";
+        string vehiclePrimary = "0";
+        long custID;
+        string ID;
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            long custID;
-            string ID;
-
             custID = (long)Session["ID"];
             ID = custID.ToString();
 
@@ -42,9 +45,31 @@ namespace WebApplication2
 
             if (!Page.IsPostBack)
             {
+                //If statements for setting size label
+                if((string)Session["SizeType"] == "1")
+                {
+                    lblSize.Text = "Small";
+                }
+                else if((string)Session["SizeType"] == "2")
+                {
+                    lblSize.Text = "Medium";
+                }
+                else if((string)Session["SizeType"] == "3")
+                {
+                    lblSize.Text = "Large";
+                }
+                else if((string)Session["SizeType"] == "4")
+                {
+                    lblSize.Text = "Very Long";
+                }
+                else
+                {
+                    lblSize.Text = "N/A";
+                }
+
                 //Getting request information
                 lblDate.Text = date;
-                lblSize.Text = size;
+                //lblSize.Text = size;
                 lblPackage.Text = service;
                 lblAddress1.Text = address1;
                 lblAddress2.Text = address2;
@@ -74,19 +99,39 @@ namespace WebApplication2
             string date = lblDate.Text;
             string time = lblTime.Text;
             string formatDate = date + " " + time;
+            string status = "Waiting to be processed";
+            string performance = "5";
 
-            //Methods to fill the requested order
-            myDataLayer.NewRequestOrder(formatDate, lblPackage.Text, lblCustomerID.Text);
-            myDataLayer.NewRequestVehicleInfo(lblPlateNumber.Text, lblPlateState.Text, lblModel.Text, lblSize.Text, lblCustomerID.Text);
-            myDataLayer.NewRequestCarLocationAddress(address, lblCity.Text, lblZipcode.Text, lblCustomerID.Text);
+            Session["CurrentStatus"] = status;
 
+            //Methods to fill the requested order below
+            myDataLayer.NewRequestCarLocationAddress(address, lblCity.Text, lblZipcode.Text, ID);
+
+            //Retrieve the addressID
+            string addressID = myDataLayer.retrieveAddressID(ID, address).ToString();
+
+            myDataLayer.NewRequestVehicleInfo(lblPlateNumber.Text, lblPlateState.Text, lblModel.Text, (string)Session["SizeType"], vehicleSaved, vehiclePrimary, ID);
+
+            //Retrieve the vehicleID
+            string vehicleID = myDataLayer.retrieveVehicleID(ID, lblPlateNumber.Text).ToString();
+                              
             //If the interior cleaning is selected
             if ((string)Session["Package"] == "premiumOption")
             {
-                myDataLayer.NewRequestKeyPickUpAddress(lblPickUpAddress.Text, lblPickUpCity.Text, lblPickUpZipcode.Text, lblCustomerID.Text);
-                myDataLayer.NewRequestKeyDropOffAddress(lblDropOffAddress.Text, lblDropOffCity.Text, lblDropOffZipcode.Text, lblCustomerID.Text);
+                myDataLayer.NewRequestKeyPickUpAddress(lblPickUpAddress.Text, lblPickUpCity.Text, lblPickUpZipcode.Text, ID);
+                myDataLayer.NewRequestKeyDropOffAddress(lblDropOffAddress.Text, lblDropOffCity.Text, lblDropOffZipcode.Text, ID);
+
+                string pickupID = myDataLayer.retrieveAddressID(ID, lblPickUpAddress.Text).ToString();
+                string dropoffID = myDataLayer.retrieveAddressID(ID, lblDropOffAddress.Text).ToString();
+
+                myDataLayer.NewRequestOrderPremium(formatDate, lblPackage.Text, status, performance, pickupID, dropoffID, addressID, vehicleID, ID);
+            }
+            else
+            {
+                myDataLayer.NewRequestOrder(formatDate, lblPackage.Text, status, performance, addressID, vehicleID, ID);
             }
 
+            
             //Redirect to payment page
             Response.Redirect("~/frmOrderLookup.aspx");
         }
@@ -94,6 +139,11 @@ namespace WebApplication2
         protected void btnPrevious_ServerClick(object sender, EventArgs e)
         {
             Response.Redirect("~/frmNewRequest1.aspx");
+        }
+
+        protected void btnCancel_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/frmIndex.aspx");
         }
     }
 }

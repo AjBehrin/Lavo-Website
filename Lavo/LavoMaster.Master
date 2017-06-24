@@ -247,7 +247,7 @@ background-color: #00FFFF;
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-plus"></span>New Request</a>
           <ul class="dropdown-menu">
             <li><a href="frmNewRequest1.aspx">Wash my car!</a></li>
-            <li><a href="frmNewRequest5.aspx">View Order</a></li>
+            <li><a href="frmViewStatus1.aspx">View Order</a></li>
               </ul>
             
               <!---  <li><a href="#"><span class="glyphicon glyphicon-plus"></span> New Request</a></li>  -->

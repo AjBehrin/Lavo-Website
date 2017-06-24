@@ -9,6 +9,8 @@ namespace WebApplication2
 {
     public partial class EnterAddressForm : System.Web.UI.Page
     {
+        clsDataLayer myDataLayer = new clsDataLayer();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,7 +21,7 @@ namespace WebApplication2
             Session["Address1"] = txtReqAddress1.Value;
             Session["Address2"] = txtReqAddress2.Value;
             Session["City"] = txtCity.Value;
-            Session["Zipcode"] = txtZipCode.Value;
+            Session["Zipcode"] = txtZipCode.Value;          
 
             Response.Redirect("~/frmNewRequest5.aspx");
         }

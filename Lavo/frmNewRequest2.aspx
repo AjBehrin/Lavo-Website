@@ -94,10 +94,10 @@
                 <label class="control-label " for="region_id">Choose Your Package</label>
                 <br />
                 <select runat="server" class="form-control" id="sizeSelect" name="sizeSelect">
-                    <option value="Small" id="dropdownSmall">Small</option>
-                    <option value="Medium" id="dropdownMedium">Medium</option>
-                    <option value="Large" id="dropdownLarge">Large</option>
-                    <option value="Very Long" id="dropdownVeryLong">Very Long</option>
+                    <option value="1" id="dropdownSmall">Small</option>
+                    <option value="2" id="dropdownMedium">Medium</option>
+                    <option value="3" id="dropdownLarge">Large</option>
+                    <option value="4" id="dropdownVeryLong">Very Long</option>
                 </select>
             </div>
 
@@ -123,7 +123,7 @@
                         <label class="control-label">Vehicle Plate State</label>
                         <div class="controls">
                             <input runat="server" id="txtVehicleState" name="VehicleState" type="text" placeholder="(i.e. IL for Illinois)"
-                                class="input-xlarge">
+                                class="input-xlarge" maxlength="2">
                         </div>
                     </div>
                     <br />
@@ -141,6 +141,8 @@
 
         </div>
 
+        <br />
+        <asp:Label ID="lblVehicleError" runat="server"></asp:Label>
         <br />
 
         <div class="form-group">

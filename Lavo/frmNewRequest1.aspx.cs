@@ -16,7 +16,7 @@ namespace WebApplication2
 
         protected void btnSubmit_ServerClick(object sender, EventArgs e)
         {
-            Session["Date"] = txtDate.Value;
+            Session["Date"] = txtDate.Value.Trim();
             Session["TimeSlot"] = timeSelect.SelectedIndex == 0 ? "07:00:00" :
                 timeSelect.Items[timeSelect.SelectedIndex].Value;
 

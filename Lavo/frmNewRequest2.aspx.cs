@@ -10,6 +10,7 @@ namespace WebApplication2
 {
     public partial class frmNewRequest3 : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
    
@@ -18,13 +19,13 @@ namespace WebApplication2
         protected void btnSubmit_ServerClick(object sender, EventArgs e)
         {
             //Selected drop down item
-            Session["SizeType"] = sizeSelect.SelectedIndex == 0 ? "Small" :
+            Session["SizeType"] = sizeSelect.SelectedIndex == 0 ? "1" :
                 sizeSelect.Items[sizeSelect.SelectedIndex].Value;
 
             Session["PlateNumber"] = txtVehicleNumber.Value;
             Session["PlateState"] = txtVehicleState.Value;
-            Session["Model"] = txtVehicleModel.Value;
-
+            Session["Model"] = txtVehicleModel.Value;         
+          
             Response.Redirect("~/frmNewRequest3.aspx");
         }
     }
