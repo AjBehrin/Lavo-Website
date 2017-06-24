@@ -131,7 +131,7 @@
                             <div class="form-group">
                                 <label for="lastname" class="col-md-3 control-label">State</label>
                                 <div class="col-md-9">
-                                    <input type="text" runat="server" class="form-control" name="lastname" placeholder="State" id="txtState">
+                                    <input type="text" runat="server" class="form-control" name="lastname" placeholder="State (i.e. IL)" id="txtState" maxlength="2">
                                 </div>
                             </div>
 
